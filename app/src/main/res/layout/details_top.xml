@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!--广告轮播图开始-->
+    <RelativeLayout
+        android:id="@+id/rl_carousel"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/vk_white">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_home"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:background="@mipmap/moren3">
+
+        </android.support.v4.view.ViewPager>
+
+        <!-- 无限轮播图 底部 -->
+        <RelativeLayout
+            android:id="@+id/rv_point"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp">
+
+            <LinearLayout
+                android:id="@+id/ll_point"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/call_button_padding_left"
+                android:orientation="horizontal" />
+        </RelativeLayout>
+    </RelativeLayout>
+    <!--广告轮播图结束-->
+</LinearLayout>

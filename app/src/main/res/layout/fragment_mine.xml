@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ly_main_weixin"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/linef8"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/bar"
+        layout="@layout/title_bar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="210dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@mipmap/bg_yellow" />
+
+        <View
+            style="@style/margin_16_10_16"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@mipmap/bg_dotted" />
+
+        <ImageView
+            style="@style/margin_16_16"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="25dp"
+            android:background="@mipmap/bg_my" />
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:background="@mipmap/img_headportrait" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="155dp"
+            android:background="@mipmap/me_bg_name"
+            android:gravity="center"
+            android:padding="5dp"
+            android:text="白兔老师"
+            android:textColor="@color/vk_white"
+            android:textSize="15dp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                style="@style/margin_16_16"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/home_cic_white"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@mipmap/me_ic_question" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="问卷调查" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@mipmap/me_ic_inform" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="活动通知" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="50dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="@mipmap/me_ic_invite" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:text="邀约家长" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/margin_16_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/home_cic_white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/me_ic_addbook"
+                        android:drawablePadding="10dp"
+                        android:paddingLeft="16dp"
+                        android:text="通讯录"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="17dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@mipmap/me_ic_right" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/margin_16_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/linef2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/me_ic_set"
+                        android:drawablePadding="10dp"
+                        android:paddingLeft="16dp"
+                        android:text="个人设置"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="17dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@mipmap/me_ic_right" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/margin_16_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/home_cic_white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/me_ic_flow"
+                        android:drawablePadding="10dp"
+                        android:paddingLeft="16dp"
+                        android:text="借阅流程"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="17dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@mipmap/me_ic_right" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/margin_16_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/linef2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/me_ic_manage"
+                        android:drawablePadding="10dp"
+                        android:paddingLeft="16dp"
+                        android:text="借阅管理"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="17dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@mipmap/me_ic_right" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/margin_16_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/linef2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/me_ic_bookin"
+                        android:drawablePadding="10dp"
+                        android:paddingLeft="16dp"
+                        android:text="存书操作"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:text="已打开"
+                        android:textColor="@color/gray_bc" />
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="17dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@mipmap/me_ic_right" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/margin_16_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/home_cic_white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/me_ic_unpack"
+                        android:drawablePadding="10dp"
+                        android:paddingLeft="16dp"
+                        android:text="开箱管理"
+                        android:textSize="14dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:text="非管理员不显示"
+                        android:textColor="@color/gray_bc" />
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="17dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@mipmap/me_ic_right" />
+
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">FrameWork</string>
+    <string name="common_progress_on">正在加载</string>
+</resources>

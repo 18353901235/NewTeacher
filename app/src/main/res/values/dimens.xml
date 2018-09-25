@@ -1,0 +1,40 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="margin_5">5dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="call_button_padding_left">25dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_20">20dp</dimen>
+
+    <dimen name="title_bar">45dp</dimen>
+    <dimen name="title_size">14dp</dimen>
+    <dimen name="title_size_all">18dp</dimen>
+    <!-- 共通style -->
+    <dimen name="commonstyle_20">20dp</dimen>
+    <dimen name="commonstyle_18">18dp</dimen>
+    <dimen name="commonstyle_16">16dp</dimen>
+    <dimen name="commonstyle_14">14dp</dimen>
+    <dimen name="commonstyle_12">12dp</dimen>
+    <dimen name="commonstyle_10">10dp</dimen>
+    <dimen name="dgv_overlap_if_switch_straight_line">16dp</dimen>
+    <dimen name="mkrow_heigh_big">50dp</dimen>
+    <dimen name="ic_heigh_big">40dp</dimen>
+
+    <!--行高-->
+    <dimen name="mkrow_heigh">50dp</dimen>
+    <dimen name="mkrow_heigh_small">30dp</dimen>
+    <!--图片-->
+    <dimen name="mkicon_height">24dp</dimen>
+    <!--项目图片-->
+    <dimen name="mk_item_list_pic">65dp</dimen>
+
+
+    <dimen name="mk_item_pic_small">16dp</dimen>
+    <dimen name="mk_item_pic">20dp</dimen>
+    <dimen name="mk_item_pic_big">30dp</dimen>
+    <!--siderbar-->
+    <dimen name="textsize">8dp</dimen>
+</resources>

@@ -1,0 +1,27 @@
+<resources>
+    <!-- textsize start -->
+    <dimen name="textsize_15">30sp</dimen>
+    <dimen name="textsize_14">28sp</dimen>
+    <dimen name="textsize_13">26sp</dimen>
+    <dimen name="textsize_12">24sp</dimen>
+    <dimen name="textsize_11">22sp</dimen>
+    <dimen name="textsize_10">20sp</dimen>
+    <dimen name="textsize_9">18sp</dimen>
+    <dimen name="textsize_8">16sp</dimen>
+    <dimen name="textsize_7">14sp</dimen>
+    <dimen name="textsize_6">12sp</dimen>
+    <dimen name="textsize_5">10sp</dimen>
+    <dimen name="textsize_4">8sp</dimen>
+    <dimen name="textsize_3">6sp</dimen>
+    <dimen name="textsize_2">4sp</dimen>
+    <dimen name="textsize_1">2sp</dimen>
+    <!-- textsize end -->
+
+
+    <!-- 加载圆形进度条显示宽高 -->
+    <dimen name="progress_width_height">40dp</dimen>
+    <!-- 圆形进度条文字显示大小 -->
+    <dimen name="progress_text">15sp</dimen>
+    <!-- 进度条圆圈与文字距离 -->
+    <dimen name="progerss_marg">5dp</dimen>
+</resources>
