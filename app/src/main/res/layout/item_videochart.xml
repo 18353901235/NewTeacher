@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/linef8"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+    <com.project.my.studystarteacher.newteacher.view.CircleImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center_vertical"
+        android:src="@mipmap/moren" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:text="安小贝"
+                android:textColor="@color/black_deep"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2018-08-08 17:55:44"
+                android:textColor="@color/gray" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/content"
+            android:text="从上图中我们可以看到，刘强东的这一顿饭非常的丰盛，而且也非常的幸福"
+            android:textColor="@color/black_deep" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

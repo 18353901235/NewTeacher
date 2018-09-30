@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/bac_gg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/margin_16_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:drawableLeft="@mipmap/musicbk_ic_age"
+                    android:drawablePadding="5dp"
+                    android:text="年龄"
+                    android:textSize="15dp" />
+
+                <com.project.my.studystarteacher.newteacher.view.AllGridView
+                    android:id="@+id/gridview"
+                    style="@style/margin_16_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:horizontalSpacing="10dp"
+                    android:numColumns="3"
+                    android:verticalSpacing="10dp"></com.project.my.studystarteacher.newteacher.view.AllGridView>
+
+                <TextView
+                    style="@style/margin_16_10_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/musicbk_ic_theme"
+                    android:drawablePadding="5dp"
+                    android:text="主题"
+                    android:textSize="15dp" />
+
+                <com.project.my.studystarteacher.newteacher.view.AllGridView
+                    style="@style/margin_16_10_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:numColumns="3"></com.project.my.studystarteacher.newteacher.view.AllGridView>
+
+                <TextView
+                    style="@style/margin_16_10_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/musicbk_ic_state"
+                    android:drawablePadding="5dp"
+                    android:text="国别"
+                    android:textSize="15dp" />
+
+                <com.project.my.studystarteacher.newteacher.view.AllGridView
+                    style="@style/margin_16_16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:numColumns="3"></com.project.my.studystarteacher.newteacher.view.AllGridView>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/gray"
+                android:gravity="center"
+                android:text="重置"
+                android:textColor="@color/vk_white" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorTitleBg"
+                android:gravity="center"
+                android:text="完成"
+                android:textColor="@color/vk_white" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

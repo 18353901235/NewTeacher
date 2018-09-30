@@ -70,10 +70,10 @@ public class TempSourceSupply {
 
     public static ArrayList<String> getTemp() {
         ArrayList<String> data = new ArrayList<>();
-        data.add(0, "农户直销");
-        data.add(1, "共享农庄");
-        data.add(2, "美丽乡村");
-        data.add(3, "美丽乡村");
+        data.add(0, "有声绘本");
+        data.add(1, "借阅管理");
+        data.add(2, "主播录制");
+        data.add(3, "悦读活动");
         return data;
     }
 

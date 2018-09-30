@@ -1,187 +1,187 @@
 com.umeng.message.lib
-int color gray 0x7f060001
-int color gray_bc 0x7f060002
-int color gray_tv 0x7f060003
-int color vk_black 0x7f060004
-int color vk_black_pressed 0x7f060005
-int color vk_clear 0x7f060006
-int color vk_color 0x7f060007
-int color vk_grey_color 0x7f060008
-int color vk_light_color 0x7f060009
-int color vk_share_blue_color 0x7f06000a
-int color vk_share_gray_line 0x7f06000b
-int color vk_share_link_color 0x7f06000c
-int color vk_share_link_title_color 0x7f06000d
-int color vk_share_top_blue_color 0x7f06000e
-int color vk_white 0x7f06000f
-int dimen vk_share_dialog_padding 0x7f080001
-int dimen vk_share_dialog_padding_top 0x7f080002
-int dimen vk_share_dialog_view_padding 0x7f080003
-int dimen vk_share_link_top_margin 0x7f080004
-int dimen vk_share_send_text_size 0x7f080005
-int dimen vk_share_settings_button_min_height 0x7f080006
-int dimen vk_share_title_link_host_size 0x7f080007
-int dimen vk_share_title_link_title_size 0x7f080008
-int dimen vk_share_title_text_size 0x7f080009
-int dimen vk_share_top_button_padding_left 0x7f08000a
-int dimen vk_share_top_button_padding_right 0x7f08000b
-int dimen vk_share_top_image_margin 0x7f08000c
-int dimen vk_share_top_line_margin 0x7f08000d
-int dimen vk_share_top_panel_height 0x7f08000e
-int dimen vk_share_top_title_margin 0x7f08000f
-int drawable com_facebook_close 0x7f090001
-int drawable ic_ab_app 0x7f090002
-int drawable ic_ab_done 0x7f090003
-int drawable umeng_socialize_alipay 0x7f090004
-int drawable umeng_socialize_back_icon 0x7f090005
-int drawable umeng_socialize_btn_bg 0x7f090006
-int drawable umeng_socialize_copy 0x7f090007
-int drawable umeng_socialize_copyurl 0x7f090008
-int drawable umeng_socialize_delete 0x7f090009
-int drawable umeng_socialize_ding 0x7f09000a
-int drawable umeng_socialize_douban 0x7f09000b
-int drawable umeng_socialize_dropbox 0x7f09000c
-int drawable umeng_socialize_edit_bg 0x7f09000d
-int drawable umeng_socialize_evernote 0x7f09000e
-int drawable umeng_socialize_facebook 0x7f09000f
-int drawable umeng_socialize_fav 0x7f090010
-int drawable umeng_socialize_fbmessage 0x7f090011
-int drawable umeng_socialize_flickr 0x7f090012
-int drawable umeng_socialize_foursquare 0x7f090013
-int drawable umeng_socialize_gmail 0x7f090014
-int drawable umeng_socialize_google 0x7f090015
-int drawable umeng_socialize_instagram 0x7f090016
-int drawable umeng_socialize_kakao 0x7f090017
-int drawable umeng_socialize_laiwang 0x7f090018
-int drawable umeng_socialize_laiwang_dynamic 0x7f090019
-int drawable umeng_socialize_line 0x7f09001a
-int drawable umeng_socialize_linkedin 0x7f09001b
-int drawable umeng_socialize_menu_default 0x7f09001c
-int drawable umeng_socialize_more 0x7f09001d
-int drawable umeng_socialize_pinterest 0x7f09001e
-int drawable umeng_socialize_pocket 0x7f09001f
-int drawable umeng_socialize_qq 0x7f090020
-int drawable umeng_socialize_qzone 0x7f090021
-int drawable umeng_socialize_renren 0x7f090022
-int drawable umeng_socialize_share_music 0x7f090023
-int drawable umeng_socialize_share_video 0x7f090024
-int drawable umeng_socialize_share_web 0x7f090025
-int drawable umeng_socialize_sina 0x7f090026
-int drawable umeng_socialize_sms 0x7f090027
-int drawable umeng_socialize_tumblr 0x7f090028
-int drawable umeng_socialize_twitter 0x7f090029
-int drawable umeng_socialize_tx 0x7f09002a
-int drawable umeng_socialize_wechat 0x7f09002b
-int drawable umeng_socialize_whatsapp 0x7f09002c
-int drawable umeng_socialize_wxcircle 0x7f09002d
-int drawable umeng_socialize_yixin 0x7f09002e
-int drawable umeng_socialize_yixin_circle 0x7f09002f
-int drawable umeng_socialize_ynote 0x7f090030
-int drawable vk_clear_shape 0x7f090031
-int drawable vk_gray_transparent_shape 0x7f090032
-int drawable vk_icon 0x7f090033
-int drawable vk_share_send_button_background 0x7f090034
-int id attachmentLinkLayout 0x7f0c0001
-int id captchaAnswer 0x7f0c0002
-int id captcha_container 0x7f0c0003
-int id com_facebook_fragment_container 0x7f0c0004
-int id com_facebook_login_activity_progress_bar 0x7f0c0005
-int id copyUrl 0x7f0c0006
-int id imageView 0x7f0c0007
-int id imagesContainer 0x7f0c0008
-int id imagesScrollView 0x7f0c0009
-int id linkHost 0x7f0c000a
-int id linkTitle 0x7f0c000b
-int id notification_bar_image 0x7f0c000c
-int id notification_large_icon1 0x7f0c000d
-int id notification_large_icon2 0x7f0c000e
-int id notification_text 0x7f0c000f
-int id notification_title 0x7f0c0010
-int id postContentLayout 0x7f0c0011
-int id postSettingsLayout 0x7f0c0012
-int id progress 0x7f0c0013
-int id progressBar 0x7f0c0014
-int id progress_bar 0x7f0c0015
-int id progress_bar_parent 0x7f0c0016
-int id root 0x7f0c0017
-int id sendButton 0x7f0c0018
-int id sendButtonLayout 0x7f0c0019
-int id sendProgress 0x7f0c001a
-int id shareText 0x7f0c001b
-int id socialize_image_view 0x7f0c001c
-int id socialize_text_view 0x7f0c001d
-int id topBarLayout 0x7f0c001e
-int id umeng_back 0x7f0c001f
-int id umeng_del 0x7f0c0020
-int id umeng_image_edge 0x7f0c0021
-int id umeng_share_btn 0x7f0c0022
-int id umeng_share_icon 0x7f0c0023
-int id umeng_socialize_follow 0x7f0c0024
-int id umeng_socialize_follow_check 0x7f0c0025
-int id umeng_socialize_share_bottom_area 0x7f0c0026
-int id umeng_socialize_share_edittext 0x7f0c0027
-int id umeng_socialize_share_titlebar 0x7f0c0028
-int id umeng_socialize_share_word_num 0x7f0c0029
-int id umeng_socialize_titlebar 0x7f0c002a
-int id umeng_title 0x7f0c002b
-int id umeng_web_title 0x7f0c002c
-int id upush_notification1 0x7f0c002d
-int id upush_notification2 0x7f0c002e
-int id webView 0x7f0c002f
-int id webview 0x7f0c0030
-int layout com_facebook_activity_layout 0x7f0f0001
-int layout com_facebook_login_fragment 0x7f0f0002
-int layout socialize_share_menu_item 0x7f0f0003
-int layout umeng_socialize_activity_kakao_webview 0x7f0f0004
-int layout umeng_socialize_oauth_dialog 0x7f0f0005
-int layout umeng_socialize_share 0x7f0f0006
-int layout upush_bar_image_notification 0x7f0f0007
-int layout upush_notification 0x7f0f0008
-int layout vk_captcha_dialog 0x7f0f0009
-int layout vk_open_auth_dialog 0x7f0f000a
-int layout vk_share_dialog 0x7f0f000b
-int string com_facebook_dialogloginactivity_ok_button 0x7f150001
-int string com_facebook_image_download_unknown_error 0x7f150002
-int string com_facebook_internet_permission_error_message 0x7f150003
-int string com_facebook_internet_permission_error_title 0x7f150004
-int string com_facebook_like_button_liked 0x7f150005
-int string com_facebook_like_button_not_liked 0x7f150006
-int string com_facebook_loading 0x7f150007
-int string com_facebook_loginview_cancel_action 0x7f150008
-int string com_facebook_loginview_log_in_button 0x7f150009
-int string com_facebook_loginview_log_in_button_long 0x7f15000a
-int string com_facebook_loginview_log_out_action 0x7f15000b
-int string com_facebook_loginview_log_out_button 0x7f15000c
-int string com_facebook_loginview_logged_in_as 0x7f15000d
-int string com_facebook_loginview_logged_in_using_facebook 0x7f15000e
-int string com_facebook_requesterror_password_changed 0x7f15000f
-int string com_facebook_requesterror_permissions 0x7f150010
-int string com_facebook_requesterror_reconnect 0x7f150011
-int string com_facebook_send_button_text 0x7f150012
-int string com_facebook_share_button_text 0x7f150013
-int string com_facebook_tooltip_default 0x7f150014
-int string foursquare_content 0x7f150015
-int string foursquare_no_client 0x7f150016
-int string foursquare_showword 0x7f150017
-int string kakao_content 0x7f150018
-int string kakao_no_client 0x7f150019
-int string kakao_no_content 0x7f15001a
-int string kakao_showword 0x7f15001b
-int string messenger_send_button_text 0x7f15001c
-int string umeng_socialize_sharetodouban 0x7f15001d
-int string umeng_socialize_sharetolinkin 0x7f15001e
-int string umeng_socialize_sharetorenren 0x7f15001f
-int string umeng_socialize_sharetosina 0x7f150020
-int string umeng_socialize_sharetotencent 0x7f150021
-int string umeng_socialize_sharetotwitter 0x7f150022
-int string vk_enter_captcha_text 0x7f150023
-int string vk_name 0x7f150024
-int string vk_new_message_text 0x7f150025
-int string vk_new_post_settings 0x7f150026
-int string vk_retry 0x7f150027
-int string vk_send 0x7f150028
-int string vk_share 0x7f150029
-int style Theme_UMDefault 0x7f160001
-int style VKAlertDialog 0x7f160002
-int style VK_Transparent 0x7f160003
-int style umeng_socialize_popup_dialog 0x7f160004
+color gray
+color gray_bc
+color gray_tv
+color vk_black
+color vk_black_pressed
+color vk_clear
+color vk_color
+color vk_grey_color
+color vk_light_color
+color vk_share_blue_color
+color vk_share_gray_line
+color vk_share_link_color
+color vk_share_link_title_color
+color vk_share_top_blue_color
+color vk_white
+dimen vk_share_dialog_padding
+dimen vk_share_dialog_padding_top
+dimen vk_share_dialog_view_padding
+dimen vk_share_link_top_margin
+dimen vk_share_send_text_size
+dimen vk_share_settings_button_min_height
+dimen vk_share_title_link_host_size
+dimen vk_share_title_link_title_size
+dimen vk_share_title_text_size
+dimen vk_share_top_button_padding_left
+dimen vk_share_top_button_padding_right
+dimen vk_share_top_image_margin
+dimen vk_share_top_line_margin
+dimen vk_share_top_panel_height
+dimen vk_share_top_title_margin
+drawable com_facebook_close
+drawable ic_ab_app
+drawable ic_ab_done
+drawable umeng_socialize_alipay
+drawable umeng_socialize_back_icon
+drawable umeng_socialize_btn_bg
+drawable umeng_socialize_copy
+drawable umeng_socialize_copyurl
+drawable umeng_socialize_delete
+drawable umeng_socialize_ding
+drawable umeng_socialize_douban
+drawable umeng_socialize_dropbox
+drawable umeng_socialize_edit_bg
+drawable umeng_socialize_evernote
+drawable umeng_socialize_facebook
+drawable umeng_socialize_fav
+drawable umeng_socialize_fbmessage
+drawable umeng_socialize_flickr
+drawable umeng_socialize_foursquare
+drawable umeng_socialize_gmail
+drawable umeng_socialize_google
+drawable umeng_socialize_instagram
+drawable umeng_socialize_kakao
+drawable umeng_socialize_laiwang
+drawable umeng_socialize_laiwang_dynamic
+drawable umeng_socialize_line
+drawable umeng_socialize_linkedin
+drawable umeng_socialize_menu_default
+drawable umeng_socialize_more
+drawable umeng_socialize_pinterest
+drawable umeng_socialize_pocket
+drawable umeng_socialize_qq
+drawable umeng_socialize_qzone
+drawable umeng_socialize_renren
+drawable umeng_socialize_share_music
+drawable umeng_socialize_share_video
+drawable umeng_socialize_share_web
+drawable umeng_socialize_sina
+drawable umeng_socialize_sms
+drawable umeng_socialize_tumblr
+drawable umeng_socialize_twitter
+drawable umeng_socialize_tx
+drawable umeng_socialize_wechat
+drawable umeng_socialize_whatsapp
+drawable umeng_socialize_wxcircle
+drawable umeng_socialize_yixin
+drawable umeng_socialize_yixin_circle
+drawable umeng_socialize_ynote
+drawable vk_clear_shape
+drawable vk_gray_transparent_shape
+drawable vk_icon
+drawable vk_share_send_button_background
+id attachmentLinkLayout
+id captchaAnswer
+id captcha_container
+id com_facebook_fragment_container
+id com_facebook_login_activity_progress_bar
+id copyUrl
+id imageView
+id imagesContainer
+id imagesScrollView
+id linkHost
+id linkTitle
+id notification_bar_image
+id notification_large_icon1
+id notification_large_icon2
+id notification_text
+id notification_title
+id postContentLayout
+id postSettingsLayout
+id progress
+id progressBar
+id progress_bar
+id progress_bar_parent
+id root
+id sendButton
+id sendButtonLayout
+id sendProgress
+id shareText
+id socialize_image_view
+id socialize_text_view
+id topBarLayout
+id umeng_back
+id umeng_del
+id umeng_image_edge
+id umeng_share_btn
+id umeng_share_icon
+id umeng_socialize_follow
+id umeng_socialize_follow_check
+id umeng_socialize_share_bottom_area
+id umeng_socialize_share_edittext
+id umeng_socialize_share_titlebar
+id umeng_socialize_share_word_num
+id umeng_socialize_titlebar
+id umeng_title
+id umeng_web_title
+id upush_notification1
+id upush_notification2
+id webView
+id webview
+layout com_facebook_activity_layout
+layout com_facebook_login_fragment
+layout socialize_share_menu_item
+layout umeng_socialize_activity_kakao_webview
+layout umeng_socialize_oauth_dialog
+layout umeng_socialize_share
+layout upush_bar_image_notification
+layout upush_notification
+layout vk_captcha_dialog
+layout vk_open_auth_dialog
+layout vk_share_dialog
+string com_facebook_dialogloginactivity_ok_button
+string com_facebook_image_download_unknown_error
+string com_facebook_internet_permission_error_message
+string com_facebook_internet_permission_error_title
+string com_facebook_like_button_liked
+string com_facebook_like_button_not_liked
+string com_facebook_loading
+string com_facebook_loginview_cancel_action
+string com_facebook_loginview_log_in_button
+string com_facebook_loginview_log_in_button_long
+string com_facebook_loginview_log_out_action
+string com_facebook_loginview_log_out_button
+string com_facebook_loginview_logged_in_as
+string com_facebook_loginview_logged_in_using_facebook
+string com_facebook_requesterror_password_changed
+string com_facebook_requesterror_permissions
+string com_facebook_requesterror_reconnect
+string com_facebook_send_button_text
+string com_facebook_share_button_text
+string com_facebook_tooltip_default
+string foursquare_content
+string foursquare_no_client
+string foursquare_showword
+string kakao_content
+string kakao_no_client
+string kakao_no_content
+string kakao_showword
+string messenger_send_button_text
+string umeng_socialize_sharetodouban
+string umeng_socialize_sharetolinkin
+string umeng_socialize_sharetorenren
+string umeng_socialize_sharetosina
+string umeng_socialize_sharetotencent
+string umeng_socialize_sharetotwitter
+string vk_enter_captcha_text
+string vk_name
+string vk_new_message_text
+string vk_new_post_settings
+string vk_retry
+string vk_send
+string vk_share
+style Theme_UMDefault
+style VKAlertDialog
+style VK_Transparent
+style umeng_socialize_popup_dialog

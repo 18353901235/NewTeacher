@@ -4,6 +4,7 @@ package com.project.my.studystarteacher.newteacher.fragment;
 import android.view.View;
 
 import com.project.my.studystarteacher.newteacher.R;
+import com.project.my.studystarteacher.newteacher.activity.my.LoveBossActivity;
 import com.project.my.studystarteacher.newteacher.base.BaseFragment;
 
 import org.xutils.view.annotation.ContentView;
@@ -15,7 +16,12 @@ public class MyFragment extends BaseFragment {
         getLeft().setVisibility(View.GONE);
         getCommonTitle().setText("我的");
         getRight().setBackgroundResource(R.mipmap.me_ic_scan);
-
+        findViewById(R.id.love).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToActivity(mContext, LoveBossActivity.class);
+            }
+        });
     }
 
 }

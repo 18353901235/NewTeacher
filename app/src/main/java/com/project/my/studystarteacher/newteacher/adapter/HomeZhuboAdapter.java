@@ -29,6 +29,6 @@ public class HomeZhuboAdapter extends CommonAdapter<String> {
     @Override
     protected void convert(ViewHolder viewHolder, String item, int position) {
         ImageView iv = viewHolder.getView(R.id.iv);
-        imageUtility.showcornerImage("https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2292044633,1412475702&fm=27&gp=0.jpg", iv, R.mipmap.moren3);
+        imageUtility.showcornerImage("http://t2.hddhhn.com/uploads/tu/201610/198/scx30045vxd.jpg", iv, R.mipmap.moren3);
     }
 }

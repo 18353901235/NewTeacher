@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/linef8"
+    android:orientation="vertical"
+    tools:context=".activity.home.VideoDetailsActivity">
+
+    <include layout="@layout/title_bar" />
+
+    <include layout="@layout/line_white_top" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <cn.jzvd.JzvdStd
+            android:id="@+id/videoplayer"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <TextView
+            android:id="@+id/tv_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="16dp"
+
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="学之星直播"
+            android:textColor="@color/vk_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_id"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/home_cic_wgray"
+            android:drawableLeft="@mipmap/ic_numberofpeople"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:paddingBottom="3dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="3dp"
+            android:text="9.8万+"
+            android:textColor="@color/vk_white" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/js"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="内容介绍"
+                android:textColor="@color/video_color_selector"
+                android:textSize="16dp" />
+
+            <View
+                android:id="@+id/js_v"
+                android:layout_width="60dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/line_blue_normal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/hd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:gravity="center"
+                android:text="课堂互动（9999）"
+                android:textColor="@color/video_color_selector"
+                android:textSize="16dp" />
+
+            <View
+                android:id="@+id/hd_v"
+                android:layout_width="60dp"
+                android:layout_height="2dp"
+                android:layout_gravity="center_horizontal"
+                android:background="@color/line_blue_normal"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        style="@style/margin_16_16"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/linef2" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+
+
+</LinearLayout>

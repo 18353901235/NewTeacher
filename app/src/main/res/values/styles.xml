@@ -35,7 +35,10 @@
         <item name="android:layout_marginLeft">20dp</item>
         <item name="android:layout_marginRight">20dp</item>
     </style>
-
+    <style name="style_pop_animation">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_out</item>
+    </style>
     <style name="margin_16_16">
         <item name="android:layout_marginLeft">16dp</item>
         <item name="android:layout_marginRight">16dp</item>

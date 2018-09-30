@@ -8,8 +8,7 @@
     <TextView
         android:id="@+id/tab_bar"
         android:layout_width="match_parent"
-        android:layout_height="24dp"
-        android:background="@color/colorTitleBg" />
+        android:layout_height="24dp" />
 
     <TextView
         android:id="@+id/tv_title"
@@ -28,30 +27,31 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/tab_bar"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <ImageButton
             android:id="@+id/ib_left"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_centerVertical="true"
             android:layout_gravity="center"
             android:layout_marginLeft="@dimen/margin_16"
-            android:onClick="ButtonBackClick"
-            android:background="@mipmap/icon_back" />
+            android:background="@mipmap/icon_back"
+            android:onClick="ButtonBackClick" />
 
     </LinearLayout>
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@id/tab_bar">
+        android:layout_below="@id/tab_bar"
+        android:layout_alignParentRight="true">
 
         <ImageButton
             android:id="@+id/ib_right2"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_centerVertical="true"
             android:layout_gravity="center"
             android:layout_marginRight="15dp"
@@ -61,8 +61,8 @@
 
         <ImageButton
             android:id="@+id/ib_right"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_gravity="center"

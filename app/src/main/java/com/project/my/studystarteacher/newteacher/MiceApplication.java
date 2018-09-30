@@ -11,6 +11,7 @@ import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.project.my.studystarteacher.newteacher.utils.FaceConversionUtil;
 import com.project.my.studystarteacher.newteacher.utils.LogUtils;
 import com.umeng.commonsdk.UMConfigure;
 import com.umeng.socialize.PlatformConfig;
@@ -113,6 +114,19 @@ public class MiceApplication extends MultiDexApplication {
         //    PlatformConfig.setQQZone("100424468", "c7394704798a158208a74ab60104f0ba");
 //90ccaad3fc0332b4b0ab756b69912536
         // "62e9cdd7b6e06f791d2b0c2f45329e36b2f503d0"
+
+    }
+
+    /**
+     * 表情包初始化
+     */
+    public void initFaceEmoji() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                FaceConversionUtil.getInstace().getFileText(mContext);
+            }
+        }).start();
     }
 
     protected void attachBaseContext(Context base) {
@@ -144,7 +158,7 @@ public class MiceApplication extends MultiDexApplication {
 //        MiceApplication.getInstance().AddTags("test1");
 //        MiceApplication.getInstance().AddTags("test2");
 //        MiceApplication.getInstance().AddTags("test3");
-
+        initFaceEmoji();
     }
 
     private boolean isDebug() {

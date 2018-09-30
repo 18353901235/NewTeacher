@@ -8,8 +8,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.project.my.studystarteacher.newteacher.MainActivity;
 import com.project.my.studystarteacher.newteacher.R;
+import com.project.my.studystarteacher.newteacher.activity.home.HomeActivity;
 import com.project.my.studystarteacher.newteacher.base.BaseActivity;
 import com.project.my.studystarteacher.newteacher.common.UserSingleton;
 
@@ -64,10 +64,10 @@ public class SpalshActivity extends BaseActivity {
         @Override
         public void onAnimationEnd(Animation animation) {
             if (UserSingleton.isLogin()) {
-                intent = new Intent(mContext, MainActivity.class);
+                intent = new Intent(mContext, HomeActivity.class);
                 startActivity(intent);
             } else {
-                intent = new Intent(mContext, LoginActivity.class);
+                intent = new Intent(mContext, HomeActivity.class);
                 startActivity(intent);
             }
             finish();

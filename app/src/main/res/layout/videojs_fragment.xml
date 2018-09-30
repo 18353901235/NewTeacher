@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ly_main_weixin"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_marginTop="10dp"
+    android:background="@color/linef8"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/margin_16_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/home_cic_white5x"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <com.project.my.studystarteacher.newteacher.view.CircleImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@mipmap/moren" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="李博士"
+                        android:textColor="@color/blacktext" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="3dp"
+                        android:text="主题：家庭教育"
+                        android:textColor="@color/line_red" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="3dp"
+                        android:text="播放：9.8万+次"
+                        android:textColor="@color/gray" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/margin_16_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/home_cic_white5x"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableLeft="@mipmap/contentsjs"
+                    android:drawablePadding="10dp"
+                    android:text="内容介绍"
+                    android:textColor="@color/black_deep"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:paddingBottom="5dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/margin_16_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/home_cic_white5x"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:drawableLeft="@mipmap/videoabaout"
+                    android:drawablePadding="10dp"
+                    android:text="相关视频"
+                    android:textColor="@color/black_deep"
+                    android:textSize="15dp" />
+
+                <com.project.my.studystarteacher.newteacher.view.AllGridView
+                    android:id="@+id/gv"
+                    style="@style/usuallistview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:horizontalSpacing="5dp"
+                    android:numColumns="3"
+                    android:verticalSpacing="5dp"></com.project.my.studystarteacher.newteacher.view.AllGridView>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

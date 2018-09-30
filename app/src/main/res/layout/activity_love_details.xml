@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.home.LoveDetailsActivity">
+
+    <include layout="@layout/title_bar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/liuhai" />
+
+        <com.handmark.pulltorefresh.library.PullToRefreshListView
+            android:id="@+id/list"
+            style="@style/usuallistview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/money"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="16dp"></com.handmark.pulltorefresh.library.PullToRefreshListView>
+
+        <TextView
+            android:id="@+id/money"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorTitleBg"
+            android:gravity="center"
+            android:text="总计：￥400.00"
+            android:textColor="@color/black_deep"
+            android:textSize="16dp"
+            android:textStyle="bold"></TextView>
+    </RelativeLayout>
+
+</LinearLayout>

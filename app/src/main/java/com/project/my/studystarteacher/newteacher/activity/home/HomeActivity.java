@@ -1,6 +1,5 @@
 package com.project.my.studystarteacher.newteacher.activity.home;
 
-import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -64,11 +63,8 @@ public class HomeActivity extends BaseFragmentActivity {
     private MyFragment mkMineFragment = new MyFragment();
 
 
-    private FragmentManager fragmentManager;
-
     @Override
     protected void init() {
-        fragmentManager = getSupportFragmentManager();
         ArrayList<BaseFragment> frg = new ArrayList<BaseFragment>();
         frg.add(mkHomeFragment);
         frg.add(mkTravelFragment);
@@ -84,7 +80,6 @@ public class HomeActivity extends BaseFragmentActivity {
         getVersion();
         StatusUtil.setSystemStatus(mContext, true, true);
     }
-
 
     @Override
     protected void onDestroy() {
@@ -151,7 +146,7 @@ public class HomeActivity extends BaseFragmentActivity {
         linHomePage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-         //       StatusUtil.setSystemStatus(mContext, true, true);
+                //       StatusUtil.setSystemStatus(mContext, true, true);
                 clearAllSelect();
                 linAllFragment.setCurrentItem(0, false);
 //                tabMainEnum = MkTabMainEnum.FIRST_PAGE;

@@ -3,11 +3,17 @@ package com.project.my.studystarteacher.newteacher.fragment;
 
 import android.graphics.Bitmap;
 import android.support.v4.view.ViewPager;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.project.my.studystarteacher.newteacher.R;
+import com.project.my.studystarteacher.newteacher.activity.home.AudioBookActivity;
+import com.project.my.studystarteacher.newteacher.activity.home.BorrowMangerActivity;
+import com.project.my.studystarteacher.newteacher.activity.home.LoveDetailsActivity;
 import com.project.my.studystarteacher.newteacher.adapter.HomeClassAdapter;
 import com.project.my.studystarteacher.newteacher.adapter.HomeYueduAdapter;
 import com.project.my.studystarteacher.newteacher.adapter.HomeZhuboAdapter;
@@ -38,6 +44,8 @@ public class HomeFragment extends BaseFragment {
     private GridView zhubo_gv;
 
     private AdvertHorizontalUtil adUtil;
+    @ViewInject(R.id.love)
+    private TextView love;
 
     @Override
     public void init() {
@@ -51,7 +59,32 @@ public class HomeFragment extends BaseFragment {
         yuedu_gv.setAdapter(homeClassAdapter2);
         HomeZhuboAdapter homeClassAdapter3 = new HomeZhuboAdapter(getActivity(), R.layout.item_zhubo, TempSourceSupply.getTemp());
         zhubo_gv.setAdapter(homeClassAdapter3);
+        gv_class.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        ToActivity(mContext, AudioBookActivity.class);
+                        break;
+                    case 1:
+                        ToActivity(mContext, BorrowMangerActivity.class);
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        break;
+                }
+            }
+        });
+        love.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToActivity(mContext, LoveDetailsActivity.class);
+            }
+        });
     }
+
+    ;
 
     private void BannerAdModel(ArrayList imageUrls) {
         /*banner滑动广告也*/

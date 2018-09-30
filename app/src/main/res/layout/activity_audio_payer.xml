@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.home.AudioPayerActivity">
+
+    <ImageView
+        android:id="@+id/bac_blur"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="120dp"
+        android:scaleType="fitXY" />
+
+    <include
+        android:id="@+id/top"
+        layout="@layout/title_bar" />
+
+    <com.project.my.studystarteacher.newteacher.view.CircleImageView
+        android:id="@+id/bac_gry"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:src="@color/gray" />
+
+    <com.project.my.studystarteacher.newteacher.view.CircleImageView
+        android:id="@+id/img"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="105dp"
+        android:src="@mipmap/pic" />
+
+    <LinearLayout
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="小猪怒理"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="陆兵 诗，杨永请 等画"
+            android:textSize="14dp" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/msg"
+        style="@style/margin_16_16"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/payer_ll"
+        android:layout_marginTop="80dp"
+
+        android:lineSpacingMultiplier="1.3"
+        android:text="王远是我身边唯一一个，被鞭子抽着跑完前半生的人。
+
+他就像一头被放到赛马场上的家猪。家猪很无辜，他不想跑，只是迫于身后的鞭子，只能嚎叫着，一把鼻涕一把泪地往前冲。
+
+问题是，他还不能回过头，去拱那个手拿鞭子的人，因为那人是他爸。
+
+王远他爸是武汉某大学的教授，教工程造价。在学习方面，他对王远要求十分严苛，对待儿子的错误也绝不姑息，坚决贯彻“棍棒之下出孝子”的教育理念。老王很成功啊，王远一直都是每个家长口中的“别人家孩子”。
+
+王远觉得很痛苦，他只想长大以后当一个爱弹吉他的农民。他长相普通，身高普通，就连人生理想也普普通通。同学们都很费解，因为那时大家都立志要当科学家、大发明家。"
+        android:textColor="@color/black_tm"
+        android:textSize="15dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/payer_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="180dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_currentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="00:00"
+            android:textColor="@color/vk_white" />
+
+        <SeekBar
+            android:id="@+id/skbProgress"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:max="100"
+            android:progressDrawable="@drawable/player_setting_bright_progressbar"
+            android:thumb="@mipmap/point" />
+
+        <TextView
+            android:id="@+id/tv_sumTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:text="00:00"
+            android:textColor="@color/vk_white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true"
+        android:background="@mipmap/bg_arc"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@mipmap/allrond" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@mipmap/goback" />
+
+        <ImageView
+            android:id="@+id/start"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:background="@mipmap/play_btn_play" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@mipmap/gogo" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@mipmap/details" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

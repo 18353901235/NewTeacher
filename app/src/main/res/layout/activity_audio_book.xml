@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.home.AudioBookActivity">
+
+    <include layout="@layout/title_bar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/liuhai" />
+
+        <com.handmark.pulltorefresh.library.PullToRefreshGridView
+            android:id="@+id/list"
+            style="@style/usuallistview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="16dp"
+            android:horizontalSpacing="15dp"
+            android:numColumns="2"
+            android:verticalSpacing="5dp"></com.handmark.pulltorefresh.library.PullToRefreshGridView>
+    </RelativeLayout>
+</LinearLayout>

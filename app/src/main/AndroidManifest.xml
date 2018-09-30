@@ -270,10 +270,19 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".login.LoginActivity" />
-        <activity android:name=".login.RegistActivity"></activity>
-        <activity android:name="com.project.my.studystarteacher.newteacher.login.RegistTwoActivity"></activity>
-        <activity android:name="com.project.my.studystarteacher.newteacher.activity.home.HomeActivity"></activity>
+        <activity android:name=".login.RegistActivity" />
+        <activity android:name=".login.RegistTwoActivity" />
+        <activity android:name=".activity.home.HomeActivity" />
+        <activity android:name=".activity.home.VideoDetailsActivity" />
+        <activity android:name=".activity.home.AudioBookActivity" />
+        <activity android:name=".activity.home.AudioPayerActivity" />
 
+        <service android:name=".service.MyService" />
+
+        <activity android:name=".activity.home.LoveDetailsActivity" />
+        <activity android:name=".activity.my.LoveBossActivity" />
+        <activity android:name=".activity.my.LoveJoinDetailsActivity" />
+        <activity android:name=".activity.home.BorrowMangerActivity"></activity>
     </application>
 
 </manifest>

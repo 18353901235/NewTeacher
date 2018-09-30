@@ -68,7 +68,7 @@ public class ImageUtility {
     public void showcornerImage(String url, ImageView imageView, int Res) {
         try {
             imageLoader.displayImage(url, imageView, new DisplayImageOptions.Builder().showStubImage(Res).showImageForEmptyUri(Res)
-                    .showImageOnFail(Res).cacheInMemory(true).cacheOnDisc(true).displayer(new FlexibleRoundedBitmapDisplayer(DensityUtil.dip2px(10))).build());
+                    .showImageOnFail(Res).cacheInMemory(true).cacheOnDisc(true).displayer(new FlexibleRoundedBitmapDisplayer(DensityUtil.dip2px(5))).build());
         } catch (OutOfMemoryError e) {
             System.gc();
         } catch (Exception e) {

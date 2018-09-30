@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.home.BorrowMangerActivity">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/linBottom"
+        android:layout_weight="1"></android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:id="@+id/linBottom"
+        android:layout_width="fill_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/vk_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/linFirstPage"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/mkicon_height"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:background="@drawable/borbook_first" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="借阅管理"
+                android:textColor="@color/black_deep" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linMarketClass"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="@dimen/mkicon_height"
+                android:layout_height="@dimen/mkicon_height"
+                android:layout_margin="2dp"
+                android:background="@drawable/borbook_two" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="还书管理"
+                android:textColor="@color/black_deep" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linAboutMine"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight=".2"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="40dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="@dimen/mkicon_height"
+                    android:layout_height="@dimen/mkicon_height"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="2dp"
+                    android:background="@drawable/borbook_three" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="破损管理"
+                android:textColor="@color/black_deep" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
