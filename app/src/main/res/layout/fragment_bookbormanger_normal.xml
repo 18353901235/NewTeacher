@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ly_main_weixin"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <com.handmark.pulltorefresh.library.PullToRefreshGridView
+        android:id="@+id/list"
+        style="@style/usuallistview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:horizontalSpacing="20dp"
+        android:numColumns="1"
+        android:verticalSpacing="10dp"></com.handmark.pulltorefresh.library.PullToRefreshGridView>
+
+
+</LinearLayout>

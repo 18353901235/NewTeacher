@@ -10,7 +10,7 @@ import com.project.my.studystarteacher.newteacher.base.BaseFragment;
 import com.project.my.studystarteacher.newteacher.base.BaseFragmentActivity;
 import com.project.my.studystarteacher.newteacher.fragment.MyFragment;
 import com.project.my.studystarteacher.newteacher.fragment.VideoFragment;
-import com.project.my.studystarteacher.newteacher.fragment.brobook.BorMangFragment;
+import com.project.my.studystarteacher.newteacher.fragment.brobook.BorNomalMangFragment;
 
 import org.greenrobot.eventbus.EventBus;
 import org.xutils.view.annotation.ContentView;
@@ -32,7 +32,9 @@ public class BorrowMangerActivity extends BaseFragmentActivity {
      */
     @ViewInject(R.id.linFirstPage)
     private LinearLayout linHomePage;
-    private BorMangFragment mkHomeFragment = new BorMangFragment();
+    private BaseFragment mkHomeFragment;
+
+
     /**
      * 行程
      */
@@ -49,6 +51,10 @@ public class BorrowMangerActivity extends BaseFragmentActivity {
 
     @Override
     protected void init() {
+        //管理员老师
+        //mkHomeFragment = new BorMangFragment();
+        //普通老师
+        mkHomeFragment = new BorNomalMangFragment();
         ArrayList<BaseFragment> frg = new ArrayList<BaseFragment>();
         frg.add(mkHomeFragment);
         frg.add(mkTravelFragment);

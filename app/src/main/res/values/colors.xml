@@ -18,7 +18,8 @@
     <color name="pick_color">#FED9C9</color>
     <color name="pick_tv">#c18b58</color>
     <color name="pick_line2">#F9E3D6</color>
-
+    <color name="graybtn">#f0f0f0</color>
+    <color name="graytv">#c0c0c0</color>
     <color name="TextBlack">#0f0f0f</color>
     <color name="line_red">#FD6344</color>
     <color name="half_gray">#aa000000</color>

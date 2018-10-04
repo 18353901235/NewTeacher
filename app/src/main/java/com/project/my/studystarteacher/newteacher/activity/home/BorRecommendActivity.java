@@ -1,4 +1,4 @@
-package com.project.my.studystarteacher.newteacher.fragment.brobook;
+package com.project.my.studystarteacher.newteacher.activity.home;
 
 
 import android.support.v4.view.ViewPager;
@@ -7,19 +7,22 @@ import android.widget.RadioGroup;
 import com.project.my.studystarteacher.newteacher.R;
 import com.project.my.studystarteacher.newteacher.adapter.BaseVPFAdapter;
 import com.project.my.studystarteacher.newteacher.base.BaseFragment;
+import com.project.my.studystarteacher.newteacher.base.BaseFragmentActivity;
+import com.project.my.studystarteacher.newteacher.fragment.brobook.RecommendBookFragment;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 
 import java.util.ArrayList;
 
-@ContentView(R.layout.fragment_brobookmanger)
-public class BorMangFragment extends BaseFragment {
+
+@ContentView(R.layout.activity_brorecommend)
+public class BorRecommendActivity extends BaseFragmentActivity {
     @ViewInject(R.id.rg)
     private RadioGroup group;
-    private BookBorMangerFragment test1 = new BookBorMangerFragment();
-    private BookBorRecordFragment test2 = new BookBorRecordFragment();
-    private BookBorMangerPeopleFragment test3 = new BookBorMangerPeopleFragment();
+    private RecommendBookFragment test1 = new RecommendBookFragment();
+    private RecommendBookFragment test2 = new RecommendBookFragment();
+    private RecommendBookFragment test3 = new RecommendBookFragment();
     /**
      * 加载所有fragment
      */
@@ -28,14 +31,12 @@ public class BorMangFragment extends BaseFragment {
 
     @Override
     public void init() {
-        getCommonTitle().setText("借阅管理");
-
-
+        getCommonTitle().setText("手工推荐");
         ArrayList<BaseFragment> frg = new ArrayList<BaseFragment>();
         frg.add(test1);
         frg.add(test2);
         frg.add(test3);
-        linAllFragment.setAdapter(new BaseVPFAdapter(getChildFragmentManager(), frg));
+        linAllFragment.setAdapter(new BaseVPFAdapter(getSupportFragmentManager(), frg));
         group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
