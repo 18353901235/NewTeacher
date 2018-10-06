@@ -6,6 +6,7 @@ import android.view.View;
 
 import com.project.my.studystarteacher.newteacher.R;
 import com.project.my.studystarteacher.newteacher.activity.home.BorRecommendActivity;
+import com.project.my.studystarteacher.newteacher.activity.home.HistroyCommendActivity;
 import com.zhy.adapter.abslistview.CommonAdapter;
 import com.zhy.adapter.abslistview.ViewHolder;
 
@@ -30,6 +31,12 @@ public class BookBormangerNoamlAdapter extends CommonAdapter<String> {
                 mContext.startActivity(intent);
             }
         });
-
+        viewHolder.getView(R.id.hist_recommend).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, HistroyCommendActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
     }
 }

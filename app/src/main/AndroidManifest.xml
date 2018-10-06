@@ -282,10 +282,13 @@
         <activity android:name=".activity.home.LoveDetailsActivity" />
         <activity android:name=".activity.my.LoveBossActivity" />
         <activity android:name=".activity.my.LoveJoinDetailsActivity" />
-        <activity android:name=".activity.home.BorrowMangerActivity"></activity>
-        <activity android:name="com.project.my.studystarteacher.newteacher.fragment.brobook.BorMangerActivity"></activity>
+        <activity android:name=".activity.home.BorrowMangerActivity" />
+        <activity android:name=".fragment.brobook.BorMangerActivity" />
+        <activity android:name=".activity.home.BorRecommendActivity" />
+        <activity android:name=".activity.home.HistroyCommendActivity" />
+        <activity android:name=".activity.home.WornSignActivity"></activity>
+        <activity android:name="com.project.my.studystarteacher.newteacher.activity.home.WornDetailActivity"></activity>
 
-        <activity android:name="com.project.my.studystarteacher.newteacher.activity.home.BorRecommendActivity"></activity>
     </application>
 
 </manifest>

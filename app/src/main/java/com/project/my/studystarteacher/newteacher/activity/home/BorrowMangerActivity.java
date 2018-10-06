@@ -8,9 +8,9 @@ import com.project.my.studystarteacher.newteacher.R;
 import com.project.my.studystarteacher.newteacher.adapter.BaseVPFAdapter;
 import com.project.my.studystarteacher.newteacher.base.BaseFragment;
 import com.project.my.studystarteacher.newteacher.base.BaseFragmentActivity;
-import com.project.my.studystarteacher.newteacher.fragment.MyFragment;
-import com.project.my.studystarteacher.newteacher.fragment.VideoFragment;
-import com.project.my.studystarteacher.newteacher.fragment.brobook.BorNomalMangFragment;
+import com.project.my.studystarteacher.newteacher.fragment.brobook.BorMangFragment;
+import com.project.my.studystarteacher.newteacher.fragment.brobook.RepayMangFragment;
+import com.project.my.studystarteacher.newteacher.fragment.brobook.WornMangFragment;
 
 import org.greenrobot.eventbus.EventBus;
 import org.xutils.view.annotation.ContentView;
@@ -40,21 +40,21 @@ public class BorrowMangerActivity extends BaseFragmentActivity {
      */
     @ViewInject(R.id.linMarketClass)
     private LinearLayout linMarketClass;
-    private VideoFragment mkTravelFragment = new VideoFragment();
+    private RepayMangFragment mkTravelFragment = new RepayMangFragment();
 
     /**
      * 我的
      */
     @ViewInject(R.id.linAboutMine)
     private LinearLayout linAboutMine;
-    private MyFragment mkMineFragment = new MyFragment();
+    private WornMangFragment mkMineFragment = new WornMangFragment();
 
     @Override
     protected void init() {
         //管理员老师
-        //mkHomeFragment = new BorMangFragment();
+        mkHomeFragment = new BorMangFragment();
         //普通老师
-        mkHomeFragment = new BorNomalMangFragment();
+        // mkHomeFragment = new BorNomalMangFragment();
         ArrayList<BaseFragment> frg = new ArrayList<BaseFragment>();
         frg.add(mkHomeFragment);
         frg.add(mkTravelFragment);
