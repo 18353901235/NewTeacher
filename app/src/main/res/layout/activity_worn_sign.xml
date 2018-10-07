@@ -185,6 +185,8 @@
                     android:horizontalSpacing="10dp"
                     android:numColumns="3"
                     android:verticalSpacing="5dp"></com.project.my.studystarteacher.newteacher.view.AllGridView>
+
+
             </LinearLayout>
 
         </RelativeLayout>

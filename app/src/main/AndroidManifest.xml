@@ -286,8 +286,13 @@
         <activity android:name=".fragment.brobook.BorMangerActivity" />
         <activity android:name=".activity.home.BorRecommendActivity" />
         <activity android:name=".activity.home.HistroyCommendActivity" />
-        <activity android:name=".activity.home.WornSignActivity"></activity>
-        <activity android:name="com.project.my.studystarteacher.newteacher.activity.home.WornDetailActivity"></activity>
+        <activity android:name=".activity.home.WornSignActivity" />
+        <activity android:name=".activity.home.WornDetailActivity" />
+        <activity android:name=".activity.home.ReadActviActivity" />
+        <activity android:name=".activity.home.PublicActviActivity" />
+        <activity android:name=".activity.home.ZhuboActivity" />
+        <activity android:name=".activity.home.YduActiviActivity"></activity>
+        <activity android:name="com.project.my.studystarteacher.newteacher.activity.home.HomeZhuboActivity" />
 
     </application>
 

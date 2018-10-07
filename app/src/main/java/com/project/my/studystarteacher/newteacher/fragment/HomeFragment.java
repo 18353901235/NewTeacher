@@ -8,12 +8,18 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.project.my.studystarteacher.newteacher.R;
 import com.project.my.studystarteacher.newteacher.activity.home.AudioBookActivity;
+import com.project.my.studystarteacher.newteacher.activity.home.AudioPayerActivity;
 import com.project.my.studystarteacher.newteacher.activity.home.BorrowMangerActivity;
+import com.project.my.studystarteacher.newteacher.activity.home.HomeZhuboActivity;
 import com.project.my.studystarteacher.newteacher.activity.home.LoveDetailsActivity;
+import com.project.my.studystarteacher.newteacher.activity.home.ReadActviActivity;
+import com.project.my.studystarteacher.newteacher.activity.home.VideoDetailsActivity;
+import com.project.my.studystarteacher.newteacher.activity.home.YduActiviActivity;
+import com.project.my.studystarteacher.newteacher.activity.home.ZhuboActivity;
+import com.project.my.studystarteacher.newteacher.activity.my.LoveBossActivity;
 import com.project.my.studystarteacher.newteacher.adapter.HomeClassAdapter;
 import com.project.my.studystarteacher.newteacher.adapter.HomeYueduAdapter;
 import com.project.my.studystarteacher.newteacher.adapter.HomeZhuboAdapter;
@@ -45,7 +51,9 @@ public class HomeFragment extends BaseFragment {
 
     private AdvertHorizontalUtil adUtil;
     @ViewInject(R.id.love)
-    private TextView love;
+    private LinearLayout love;
+    @ViewInject(R.id.yq)
+    private LinearLayout yq;
 
     @Override
     public void init() {
@@ -57,8 +65,20 @@ public class HomeFragment extends BaseFragment {
         gv_class.setAdapter(homeClassAdapter);
         HomeYueduAdapter homeClassAdapter2 = new HomeYueduAdapter(getActivity(), R.layout.item_yuedu, TempSourceSupply.getTemp());
         yuedu_gv.setAdapter(homeClassAdapter2);
+        yuedu_gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ToActivity(mContext, VideoDetailsActivity.class);
+            }
+        });
         HomeZhuboAdapter homeClassAdapter3 = new HomeZhuboAdapter(getActivity(), R.layout.item_zhubo, TempSourceSupply.getTemp());
         zhubo_gv.setAdapter(homeClassAdapter3);
+        zhubo_gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ToActivity(mContext, AudioPayerActivity.class);
+            }
+        });
         gv_class.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -70,8 +90,10 @@ public class HomeFragment extends BaseFragment {
                         ToActivity(mContext, BorrowMangerActivity.class);
                         break;
                     case 2:
+                        ToActivity(mContext, ZhuboActivity.class);
                         break;
                     case 3:
+                        ToActivity(mContext, ReadActviActivity.class);
                         break;
                 }
             }
@@ -80,6 +102,34 @@ public class HomeFragment extends BaseFragment {
             @Override
             public void onClick(View v) {
                 ToActivity(mContext, LoveDetailsActivity.class);
+            }
+        });
+        yq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToActivity(mContext, LoveBossActivity.class);
+            }
+        });
+        findViewById(R.id.moreyue).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToActivity(mContext, YduActiviActivity.class);
+            }
+        });
+        findViewById(R.id.more_video).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //To2
+                ToActivity(mContext, HomeZhuboActivity.class);
+
+            }
+        });
+        findViewById(R.id.more_zhubo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //To2
+
+
             }
         });
     }
