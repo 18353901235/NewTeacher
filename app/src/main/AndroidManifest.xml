@@ -291,9 +291,9 @@
         <activity android:name=".activity.home.ReadActviActivity" />
         <activity android:name=".activity.home.PublicActviActivity" />
         <activity android:name=".activity.home.ZhuboActivity" />
-        <activity android:name=".activity.home.YduActiviActivity"></activity>
-        <activity android:name="com.project.my.studystarteacher.newteacher.activity.home.HomeZhuboActivity" />
-
+        <activity android:name=".activity.home.YduActiviActivity" />
+        <activity android:name=".activity.home.HomeZhuboActivity" />
+        <activity android:name=".activity.home.RecodActivity"></activity>
     </application>
 
 </manifest>

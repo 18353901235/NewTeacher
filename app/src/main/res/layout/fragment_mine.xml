@@ -40,6 +40,7 @@
             android:background="@mipmap/img_headportrait" />
 
         <TextView
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -71,6 +72,7 @@
                 android:orientation="horizontal">
 
                 <LinearLayout
+                    android:id="@+id/why_"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="50dp"
@@ -93,6 +95,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/activ_msg"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -148,6 +151,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/contact"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center_vertical"
@@ -178,6 +182,7 @@
                     android:background="@color/linef2" />
 
                 <LinearLayout
+                    android:id="@+id/setting"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center_vertical"
@@ -211,6 +216,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/read_flow"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center_vertical"
@@ -241,6 +247,7 @@
                     android:background="@color/linef2" />
 
                 <LinearLayout
+                    android:id="@+id/read_manager"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center_vertical"
@@ -271,6 +278,7 @@
                     android:background="@color/linef2" />
 
                 <LinearLayout
+                    android:id="@+id/add_book"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
                     android:gravity="center_vertical"
@@ -287,6 +295,7 @@
                         android:textSize="14dp" />
 
                     <TextView
+                        android:id="@+id/open_tv"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginRight="10dp"
@@ -307,12 +316,13 @@
                 style="@style/margin_16_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/home_cic_white"
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/open_door"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
 

@@ -1,6 +1,7 @@
 package com.project.my.studystarteacher.newteacher.activity.home;
 
 import android.view.View;
+import android.widget.AdapterView;
 
 import com.handmark.pulltorefresh.library.PullToRefreshListView;
 import com.project.my.studystarteacher.newteacher.R;
@@ -23,11 +24,22 @@ public class ZhuboActivity extends BaseActivity {
         final DemoAdapter adapter = new DemoAdapter(mContext, R.layout.zhubo_list_item, TempSourceSupply.getCZSData());
         list.setAdapter(adapter);
         final DemoAdapter adapter2 = new DemoAdapter(mContext, R.layout.zhubo_list2_item, TempSourceSupply.getCZSData());
-
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                ToActivity(mContext, RecodActivity.class);
+            }
+        });
         findViewById(R.id.bt_1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 list.setAdapter(adapter);
+                list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        ToActivity(mContext, RecodActivity.class);
+                    }
+                });
             }
         });
         findViewById(R.id.bt_3).setOnClickListener(new View.OnClickListener() {
