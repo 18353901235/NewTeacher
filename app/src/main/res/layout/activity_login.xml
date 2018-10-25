@@ -33,8 +33,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
         android:layout_marginTop="50dp"
+        android:layout_marginRight="40dp"
         android:gravity="bottom"
         android:orientation="horizontal">
 
@@ -44,6 +44,7 @@
             android:background="@mipmap/phone" />
 
         <EditText
+            android:id="@+id/phone"
             style="@style/edit_stylenosingle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -60,16 +61,16 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
         android:background="@color/pick_line" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp"
         android:gravity="bottom"
         android:orientation="horizontal">
 
@@ -79,6 +80,7 @@
             android:background="@mipmap/password" />
 
         <EditText
+            android:id="@+id/pwd"
             style="@style/pass_edit_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -93,8 +95,8 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
         android:background="@color/pick_line" />
 
     <Button
@@ -103,8 +105,8 @@
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
         android:layout_marginTop="35dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/mk_btn_big"
         android:gravity="center"
         android:text="登录"

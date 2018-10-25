@@ -11,7 +11,6 @@ import android.widget.SeekBar;
 
 import com.project.my.studystarteacher.newteacher.activity.home.AudioPayerActivity;
 import com.project.my.studystarteacher.newteacher.common.Constant;
-import com.zhouqiang.framework.util.Logger;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -22,7 +21,7 @@ import static com.project.my.studystarteacher.newteacher.activity.home.AudioPaye
 
 
 public class MyService extends Service implements MediaPlayer.OnBufferingUpdateListener, MediaPlayer.OnCompletionListener, MediaPlayer.OnPreparedListener, MediaPlayer.OnErrorListener, SeekBar.OnSeekBarChangeListener {
-
+    int position;
     TimerTask mTimerTask = new TimerTask() {
         @Override
         public void run() {
@@ -151,9 +150,9 @@ public class MyService extends Service implements MediaPlayer.OnBufferingUpdateL
 //                    Toast.makeText(MyService.this, "已经是最后一首了", Toast.LENGTH_SHORT).show();
 //                    break;
 //                }
-
                 //    String song = BOOK_PLAY_URL + song_list.get(position);
-                play("http://www.ytmp3.cn/down/53365.mp3");
+                song_ = intent.getStringExtra("song");
+                play(song_);
                 break;
             case Constant.Action.FRONT:
 //                if (position == 0) {
@@ -162,7 +161,8 @@ public class MyService extends Service implements MediaPlayer.OnBufferingUpdateL
 //                }
 //                position--;
                 //  String song__ = BOOK_PLAY_URL + song_list.get(position);
-                play("http://www.ytmp3.cn/down/53410.mp3");
+                song_ = intent.getStringExtra("song");
+                play(song_);
                 break;
         }
 
@@ -208,7 +208,6 @@ public class MyService extends Service implements MediaPlayer.OnBufferingUpdateL
         if (skbProgress != null) {
             try {
                 skbProgress.setSecondaryProgress(bufferingProgress);
-                Logger.d("進度2"+bufferingProgress);
 //                int currentProgress = skbProgress.getMax() * mediaPlayer.getCurrentPosition() / mediaPlayer.getDuration();
 //                Log.e(currentProgress + "% play", bufferingProgress + "% buffer");
             } catch (Exception e) {

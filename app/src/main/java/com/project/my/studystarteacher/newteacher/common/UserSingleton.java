@@ -38,7 +38,7 @@ public class UserSingleton {
             sysUser = new User();
             sysUser.setId(SharedPreferencesUtil.get(MiceApplication.getInstance(), ProjectConstant.USERID) == null ? "" : SharedPreferencesUtil.get(MiceApplication.getInstance(), ProjectConstant.USERID));
             sysUser.setPhone(SharedPreferencesUtil.get(MiceApplication.getInstance(), ProjectConstant.USER_PHONE));
-            sysUser.setIcon(SharedPreferencesUtil.get(MiceApplication.getInstance(), ProjectConstant.ICON));
+            sysUser.setHeadPic(SharedPreferencesUtil.get(MiceApplication.getInstance(), ProjectConstant.ICON));
             token = SharedPreferencesUtil.get(MiceApplication.getInstance(), ProjectConstant.TOKEN);
         }
         return sysUser;
@@ -63,14 +63,14 @@ public class UserSingleton {
      * @param mUser
      * @param token
      */
-    public void saveUser(Context mContext, User mUser, String pass, String token, String category, String uid) {
+    public void saveUser(Context mContext, User mUser, String pass, String token, String phone) {
         //保存用户数据
         SharedPreferencesUtil.save(mContext, ProjectConstant.USERID, mUser.getId() + "");
-        SharedPreferencesUtil.save(mContext, ProjectConstant.USER_PHONE, mUser.getPhone());
-        SharedPreferencesUtil.save(mContext, ProjectConstant.ICON, mUser.getIcon());
+        SharedPreferencesUtil.save(mContext, ProjectConstant.USER_PHONE, phone);
+        SharedPreferencesUtil.save(mContext, ProjectConstant.ICON, mUser.getHeadPic());
         SharedPreferencesUtil.save(mContext, ProjectConstant.USER_PWD, pass);
-        SharedPreferencesUtil.save(mContext, ProjectConstant.CATEGORY, category);
-        SharedPreferencesUtil.save(mContext, ProjectConstant.UID, uid);
+        //  SharedPreferencesUtil.save(mContext, ProjectConstant.CATEGORY, category);
+        //  SharedPreferencesUtil.save(mContext, ProjectConstant.UID, uid);
         setSysUser(mUser);
         //保存token信息
         SharedPreferencesUtil.save(mContext, ProjectConstant.TOKEN, token);

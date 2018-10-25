@@ -7,6 +7,5 @@
         android:id="@+id/iv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:background="@mipmap/bb"
         app:layout_constraintDimensionRatio="1:1" />
 </android.support.constraint.ConstraintLayout>

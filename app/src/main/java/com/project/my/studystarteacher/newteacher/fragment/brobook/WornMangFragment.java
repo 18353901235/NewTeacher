@@ -39,6 +39,7 @@ public class WornMangFragment extends BaseFragment {
         frg.add(test1);
         frg.add(test2);
         linAllFragment.setAdapter(new BaseVPFAdapter(getChildFragmentManager(), frg));
+        linAllFragment.setOffscreenPageLimit(2);
         group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {

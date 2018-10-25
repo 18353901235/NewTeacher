@@ -12,6 +12,7 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="30dp"
@@ -20,6 +21,7 @@
             android:text="2018-07-12" />
 
         <ImageView
+            android:id="@+id/ivAll"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center_vertical"
@@ -35,6 +37,7 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/name"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="16dp"
@@ -42,6 +45,7 @@
             android:text="四大萨达" />
 
         <TextView
+            android:id="@+id/bagNum"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="16dp"
@@ -50,6 +54,7 @@
             android:text=" B5451515151" />
 
         <ImageView
+            android:id="@+id/check_iv"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_gravity="center_vertical"

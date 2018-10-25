@@ -7,48 +7,45 @@ package com.project.my.studystarteacher.newteacher.bean;
 public class User {
 
     /**
-     * id : c5066083-3e12-44c4-a874-eab1ee500eaa
-     * phone : 15106989798
-     * pwd : 2PVXDg1+RRIsgDFQz9OD6w==
-     * nickname :
-     * icon :
-     * provinceId :
-     * cityId :
-     * areaId :
-     * city :
-     * category :
-     * sex :
-     * status :
-     * memo :
-     * mallId :
-     * createTime : 2018-05-14 08:11:19
-     * flag :
+     * id : 5895
+     * username : null
+     * password : null
+     * truename : 1111
+     * age : 0
+     * headPic : http://app.xuezhixing.net:8080/image/7878/01/photo/null
+     * sex : 女
+     * main : 7878
+     * part : 01
+     * fymcheng : 研发专属分院一院
+     * brith : null
+     * bji : 3373
+     * bjname : 测试一班
+     * xhao : null
+     * ghao : null
+     * bhao : null
+     * realID : null
+     * bookmanager : 0
      */
 
     private String id;
-    private String phone;
-    private String pwd;
-    private String nickname;
-    private String icon;
-    private String provinceId;
-    private String cityId;
-    private String areaId;
-    private String city;
-    private String category;
+    private String username;
+    private String password;
+    private String truename;
+    private int age;
+    private String headPic;
     private String sex;
-    private String status;
-    private String memo;
-    private String mallId;
-    private String createTime;
-    private String flag;
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
+    private String main;
+    private String part;
+    private String fymcheng;
+    private String brith;
+    private String bji;
+    private String bjname;
+    private String xhao;
+    private String ghao;
+    private String bhao;
+    private String realID;
+    private int bookmanager;
+    private String phone;
 
     public String getPhone() {
         return phone;
@@ -58,68 +55,52 @@ public class User {
         this.phone = phone;
     }
 
-    public String getPwd() {
-        return pwd;
+    public String getId() {
+        return id;
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public String getNickname() {
-        return nickname;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public String getIcon() {
-        return icon;
+    public String getPassword() {
+        return password;
     }
 
-    public void setIcon(String icon) {
-        this.icon = icon;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getProvinceId() {
-        return provinceId;
+    public String getTruename() {
+        return truename;
     }
 
-    public void setProvinceId(String provinceId) {
-        this.provinceId = provinceId;
+    public void setTruename(String truename) {
+        this.truename = truename;
     }
 
-    public String getCityId() {
-        return cityId;
+    public int getAge() {
+        return age;
     }
 
-    public void setCityId(String cityId) {
-        this.cityId = cityId;
+    public void setAge(int age) {
+        this.age = age;
     }
 
-    public String getAreaId() {
-        return areaId;
+    public String getHeadPic() {
+        return headPic;
     }
 
-    public void setAreaId(String areaId) {
-        this.areaId = areaId;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getCategory() {
-        return category == null ? "" : category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
+    public void setHeadPic(String headPic) {
+        this.headPic = headPic;
     }
 
     public String getSex() {
@@ -130,43 +111,91 @@ public class User {
         this.sex = sex;
     }
 
-    public String getStatus() {
-        return status;
+    public String getMain() {
+        return main;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setMain(String main) {
+        this.main = main;
     }
 
-    public String getMemo() {
-        return memo;
+    public String getPart() {
+        return part;
     }
 
-    public void setMemo(String memo) {
-        this.memo = memo;
+    public void setPart(String part) {
+        this.part = part;
     }
 
-    public String getMallId() {
-        return mallId;
+    public String getFymcheng() {
+        return fymcheng;
     }
 
-    public void setMallId(String mallId) {
-        this.mallId = mallId;
+    public void setFymcheng(String fymcheng) {
+        this.fymcheng = fymcheng;
     }
 
-    public String getCreateTime() {
-        return createTime;
+    public String getBrith() {
+        return brith;
     }
 
-    public void setCreateTime(String createTime) {
-        this.createTime = createTime;
+    public void setBrith(String brith) {
+        this.brith = brith;
     }
 
-    public String getFlag() {
-        return flag;
+    public String getBji() {
+        return bji;
     }
 
-    public void setFlag(String flag) {
-        this.flag = flag;
+    public void setBji(String bji) {
+        this.bji = bji;
+    }
+
+    public String getBjname() {
+        return bjname;
+    }
+
+    public void setBjname(String bjname) {
+        this.bjname = bjname;
+    }
+
+    public String getXhao() {
+        return xhao;
+    }
+
+    public void setXhao(String xhao) {
+        this.xhao = xhao;
+    }
+
+    public String getGhao() {
+        return ghao;
+    }
+
+    public void setGhao(String ghao) {
+        this.ghao = ghao;
+    }
+
+    public String getBhao() {
+        return bhao;
+    }
+
+    public void setBhao(String bhao) {
+        this.bhao = bhao;
+    }
+
+    public String getRealID() {
+        return realID;
+    }
+
+    public void setRealID(String realID) {
+        this.realID = realID;
+    }
+
+    public int getBookmanager() {
+        return bookmanager;
+    }
+
+    public void setBookmanager(int bookmanager) {
+        this.bookmanager = bookmanager;
     }
 }

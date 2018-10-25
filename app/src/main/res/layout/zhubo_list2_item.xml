@@ -27,12 +27,14 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/bookName"
                 style="@style/margin_16_10_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="《撒大苏打萨达》" />
 
             <TextView
+                android:id="@+id/time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -50,6 +52,7 @@
             android:orientation="vertical">
 
             <com.project.my.studystarteacher.newteacher.view.CircleImageView
+                android:id="@+id/del"
                 android:layout_width="26dp"
                 android:layout_height="30dp"
                 android:layout_gravity="center_horizontal"

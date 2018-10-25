@@ -1,1 +1,1 @@
-include ':app', ':pullToRefreshlibrary', ':framework', ':UMLibrary'
+include ':app', ':pullToRefreshlibrary', ':framework', ':UMLibrary', ':mediapicker'

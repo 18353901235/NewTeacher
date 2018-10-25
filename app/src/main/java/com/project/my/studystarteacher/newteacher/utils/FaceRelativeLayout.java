@@ -165,7 +165,6 @@ public class FaceRelativeLayout extends RelativeLayout implements
                 break;
             case R.id.et_sendmessage:
                 // 隐藏表情选择框
-                ToastUtility.showToast(MiceApplication.getInstance(), "::");
                 view.setVisibility(View.GONE);
 
 //                if (view.getVisibility() == View.VISIBLE) {

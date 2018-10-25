@@ -33,8 +33,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
         android:layout_marginTop="50dp"
+        android:layout_marginRight="40dp"
         android:gravity="bottom"
         android:orientation="horizontal">
 
@@ -44,6 +44,7 @@
             android:background="@mipmap/name" />
 
         <EditText
+            android:id="@+id/name"
             style="@style/edit_stylenosingle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -60,16 +61,16 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
         android:background="@color/pick_line" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp"
         android:gravity="bottom"
         android:orientation="horizontal">
 
@@ -79,11 +80,13 @@
             android:background="@mipmap/gender" />
 
         <RadioGroup
+            android:id="@+id/rg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <RadioButton
+                android:id="@+id/boy"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="10dp"
@@ -96,6 +99,7 @@
                 android:textSize="17dp" />
 
             <RadioButton
+                android:id="@+id/girl"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_marginLeft="10dp"
@@ -114,16 +118,17 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
         android:background="@color/pick_line" />
 
     <LinearLayout
+        android:id="@+id/select"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
         android:layout_marginTop="20dp"
+        android:layout_marginRight="40dp"
         android:gravity="bottom"
         android:orientation="horizontal">
 
@@ -133,6 +138,7 @@
             android:background="@mipmap/school" />
 
         <TextView
+            android:id="@+id/className"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
@@ -146,8 +152,8 @@
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp"
         android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
         android:background="@color/pick_line" />
 
     <Button
@@ -156,8 +162,8 @@
         android:layout_height="50dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
         android:layout_marginTop="35dp"
+        android:layout_marginRight="30dp"
         android:background="@drawable/mk_btn_big"
         android:gravity="center"
         android:text="下一步"

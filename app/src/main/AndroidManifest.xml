@@ -269,7 +269,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
-        <activity android:name=".login.LoginActivity" />
+        <activity
+            android:name=".login.LoginActivity"
+            android:launchMode="singleTop" />
         <activity android:name=".login.RegistActivity" />
         <activity android:name=".login.RegistTwoActivity" />
         <activity android:name=".activity.home.HomeActivity" />
@@ -293,7 +295,13 @@
         <activity android:name=".activity.home.ZhuboActivity" />
         <activity android:name=".activity.home.YduActiviActivity" />
         <activity android:name=".activity.home.HomeZhuboActivity" />
-        <activity android:name=".activity.home.RecodActivity"></activity>
+        <activity android:name=".activity.home.RecodActivity" />
+        <activity android:name=".activity.my.ContactActivity" />
+        <activity android:name=".login.SelectClassActivity" />
+        <activity android:name=".common.CommonWebViewActivity" />
+        <activity android:name=".activity.my.MySettingActivity" />
+        <activity android:name="com.project.my.studystarteacher.newteacher.share.ShareActivity" />
+
     </application>
 
 </manifest>

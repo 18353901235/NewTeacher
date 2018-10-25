@@ -11,6 +11,9 @@
     <color name="colorTransfer">#99000000</color>
     <color name="transfer">#00ffffff</color>
     <color name="colorWhite">#ffffff</color>
+    <color name="colorGrey">#888888</color>
+    <color name="btnGrey">#C9C9C9</color>
+    <color name="item_backagound">#EDECEC</color>
     <color name="line_blue_normal">#053E8D</color>
     <color name="linef2">#f2f2f2</color>
     <color name="linef8">#f8f8f8</color>
@@ -23,5 +26,6 @@
     <color name="TextBlack">#0f0f0f</color>
     <color name="line_red">#FD6344</color>
     <color name="half_gray">#aa000000</color>
+    <color name="gray_9c">#9c9c9c</color>
     <color name="black_tm">#aa000000</color>
 </resources>

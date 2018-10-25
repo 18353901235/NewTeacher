@@ -30,6 +30,7 @@
             android:layout_marginBottom="3dp"
             android:layout_toRightOf="@id/btn_face"
             android:background="@drawable/home_cic_w_gray"
+            android:imeOptions="actionSend"
             android:singleLine="true"
             android:textSize="16sp" />
     </RelativeLayout>

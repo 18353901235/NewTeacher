@@ -32,6 +32,13 @@ public class RepayMangFragment extends BaseFragment {
         ArrayList<BaseFragment> frg = new ArrayList<BaseFragment>();
         frg.add(test1);
         frg.add(test2);
+        getRightTextView().setText("提交");
+        getRightTextView().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         linAllFragment.setAdapter(new BaseVPFAdapter(getChildFragmentManager(), frg));
         group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override

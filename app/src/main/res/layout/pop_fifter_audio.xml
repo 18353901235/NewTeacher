@@ -31,7 +31,7 @@
                     android:textSize="15dp" />
 
                 <com.project.my.studystarteacher.newteacher.view.AllGridView
-                    android:id="@+id/gridview"
+                    android:id="@+id/gr1"
                     style="@style/margin_16_16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -50,10 +50,13 @@
                     android:textSize="15dp" />
 
                 <com.project.my.studystarteacher.newteacher.view.AllGridView
+                    android:id="@+id/gr2"
                     style="@style/margin_16_10_16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:numColumns="3"></com.project.my.studystarteacher.newteacher.view.AllGridView>
+                    android:horizontalSpacing="10dp"
+                    android:numColumns="3"
+                    android:verticalSpacing="10dp"></com.project.my.studystarteacher.newteacher.view.AllGridView>
 
                 <TextView
                     style="@style/margin_16_10_16"
@@ -65,12 +68,15 @@
                     android:textSize="15dp" />
 
                 <com.project.my.studystarteacher.newteacher.view.AllGridView
+                    android:id="@+id/gr3"
                     style="@style/margin_16_16"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:layout_marginBottom="10dp"
-                    android:numColumns="3"></com.project.my.studystarteacher.newteacher.view.AllGridView>
+                    android:horizontalSpacing="10dp"
+                    android:numColumns="3"
+                    android:verticalSpacing="10dp"></com.project.my.studystarteacher.newteacher.view.AllGridView>
             </LinearLayout>
         </ScrollView>
 
@@ -79,6 +85,7 @@
             android:layout_height="50dp">
 
             <TextView
+                android:id="@+id/reset"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -88,6 +95,7 @@
                 android:textColor="@color/vk_white" />
 
             <TextView
+                android:id="@+id/ok"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

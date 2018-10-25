@@ -13,6 +13,7 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/iv"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="@mipmap/pic" />
@@ -24,12 +25,14 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/bookName"
                 style="@style/margin_16_10_16"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="《撒大苏打萨达》" />
 
             <TextView
+                android:id="@+id/num"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"

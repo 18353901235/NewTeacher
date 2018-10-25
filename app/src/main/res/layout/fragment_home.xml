@@ -30,7 +30,7 @@
                     android:id="@+id/banner"
                     layout="@layout/details_top"
                     android:layout_width="match_parent"
-                    android:layout_height="220dp" />
+                    android:layout_height="200dp" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -64,7 +64,7 @@
                     android:layout_marginRight="16dp"
                     app:cardBackgroundColor="#c4c6c8"
                     app:cardCornerRadius="10dp"
-                    app:cardElevation="10dp"
+                    app:cardElevation="5dp"
                     app:cardPreventCornerOverlap="true"
                     app:layout_constraintTop_toTopOf="parent">
 
@@ -88,7 +88,7 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="110dp"
+                    android:layout_height="100dp"
                     android:layout_below="@id/banner"
                     android:background="@color/linef8" />
 
@@ -96,21 +96,20 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="75dp"
-                android:background="@color/vk_white"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp">
+                android:layout_height="65dp"
+                android:background="@color/vk_white">
 
                 <ImageView
                     android:layout_width="35dp"
                     android:layout_height="35dp"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginLeft="16dp"
                     android:src="@mipmap/home_ic_redpacket" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:gravity="center_vertical"
                     android:text="红包动态"
@@ -137,7 +136,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginRight="20dp"
-                    android:layout_marginBottom="25dp"
+                    android:layout_marginBottom="10dp"
                     android:background="@drawable/home_cic_pick"
                     android:orientation="horizontal">
 
@@ -145,7 +144,10 @@
                         android:id="@+id/love"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="20dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginBottom="15dp"
                         android:layout_weight="1"
                         android:background="@mipmap/home_bg_redpacket"
                         android:orientation="vertical">
@@ -185,7 +187,10 @@
                         android:id="@+id/yq"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_margin="20dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginBottom="15dp"
                         android:layout_weight="1"
                         android:background="@mipmap/home_bg_redpacket"
                         android:orientation="vertical">
@@ -230,14 +235,15 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="75dp"
+                android:layout_height="65dp"
                 android:background="@color/vk_white"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp">
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
 
                 <ImageView
                     android:layout_width="35dp"
                     android:layout_height="35dp"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginLeft="16dp"
                     android:src="@mipmap/home_ic_dynamic" />
 
@@ -259,13 +265,13 @@
                     android:layout_marginRight="16dp"
                     android:gravity="center_vertical"
                     android:text="更多>"
-                    android:textColor="@color/line_red"
+                    android:textColor="@color/gray_9c"
                     android:visibility="visible" />
             </LinearLayout>
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="111dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 app:cardCornerRadius="10dp"
@@ -273,34 +279,31 @@
                 app:cardPreventCornerOverlap="true">
 
                 <ImageView
+                    android:id="@+id/one_tv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@mipmap/moban_pic" />
+                    android:background="@mipmap/moban_pic"
+                    android:scaleType="fitXY" />
 
             </android.support.v7.widget.CardView>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="15dp"
-                android:background="@color/linef2" />
 
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="111dp"
                 android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="16dp"
                 app:cardCornerRadius="10dp"
 
                 app:cardPreventCornerOverlap="true">
 
                 <ImageView
+                    android:id="@+id/two_tv"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@mipmap/moban_pic" />
+                    android:background="@mipmap/moban_pic"
+                    android:scaleType="fitXY" />
 
             </android.support.v7.widget.CardView>
 
@@ -308,19 +311,20 @@
                 style="@style/margin_10_10"
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:background="@color/linef2" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="75dp"
+                android:layout_height="65dp"
                 android:background="@color/vk_white"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp">
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
 
                 <ImageView
                     android:layout_width="35dp"
                     android:layout_height="35dp"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginLeft="16dp"
                     android:src="@mipmap/home_ic_specialist" />
 
@@ -342,7 +346,7 @@
                     android:layout_marginRight="16dp"
                     android:gravity="center_vertical"
                     android:text="更多>"
-                    android:textColor="@color/line_red"
+                    android:textColor="@color/gray_9c"
                     android:visibility="visible" />
             </LinearLayout>
 
@@ -361,19 +365,20 @@
                 style="@style/margin_10_10"
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:background="@color/linef2" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="75dp"
+                android:layout_height="65dp"
                 android:background="@color/vk_white"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp">
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
 
                 <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="37dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginLeft="16dp"
                     android:src="@mipmap/home_ic_popanchor" />
 
@@ -395,7 +400,7 @@
                     android:layout_marginRight="16dp"
                     android:gravity="center_vertical"
                     android:text="更多>"
-                    android:textColor="@color/line_red"
+                    android:textColor="@color/gray_9c"
                     android:visibility="visible" />
             </LinearLayout>
 
@@ -415,19 +420,20 @@
                 style="@style/margin_10_10"
                 android:layout_width="match_parent"
                 android:layout_height="10dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:background="@color/linef2" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="75dp"
+                android:layout_height="65dp"
                 android:background="@color/vk_white"
-                android:paddingTop="20dp"
-                android:paddingBottom="20dp">
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp">
 
                 <ImageView
                     android:layout_width="35dp"
                     android:layout_height="35dp"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginLeft="16dp"
                     android:src="@mipmap/home_ic_class" />
 
@@ -448,7 +454,7 @@
                     android:layout_marginRight="16dp"
                     android:gravity="center_vertical"
                     android:text="更多>"
-                    android:textColor="@color/line_red"
+                    android:textColor="@color/gray_9c"
                     android:visibility="visible" />
             </LinearLayout>
 
@@ -504,6 +510,7 @@
                             android:background="@mipmap/home_img_second" />
 
                         <com.project.my.studystarteacher.newteacher.view.CircleImageView
+                            android:id="@+id/second_icon"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:layout_centerHorizontal="true"
@@ -511,6 +518,7 @@
                             android:src="@mipmap/moren" />
 
                         <TextView
+                            android:id="@+id/second_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/iv_f"
@@ -535,6 +543,7 @@
                             android:background="@mipmap/home_img_frist" />
 
                         <com.project.my.studystarteacher.newteacher.view.CircleImageView
+                            android:id="@+id/first_icon"
                             android:layout_width="75dp"
                             android:layout_height="75dp"
                             android:layout_centerHorizontal="true"
@@ -542,6 +551,7 @@
                             android:src="@mipmap/moren" />
 
                         <TextView
+                            android:id="@+id/first_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/iv_f2"
@@ -566,6 +576,7 @@
                             android:background="@mipmap/home_img_third" />
 
                         <com.project.my.studystarteacher.newteacher.view.CircleImageView
+                            android:id="@+id/third_icon"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:layout_centerHorizontal="true"
@@ -573,6 +584,7 @@
                             android:src="@mipmap/moren" />
 
                         <TextView
+                            android:id="@+id/third_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/iv_f3"
@@ -598,12 +610,14 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp">
 
                     <ImageView
                         android:layout_width="20dp"
                         android:layout_height="20dp"
+                        android:layout_gravity="center_vertical"
                         android:layout_marginLeft="16dp"
                         android:background="@mipmap/home_ic_class_reading" />
 
@@ -640,6 +654,7 @@
                             android:background="@mipmap/home_img_second" />
 
                         <com.project.my.studystarteacher.newteacher.view.CircleImageView
+                            android:id="@+id/two_icon"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:layout_centerHorizontal="true"
@@ -647,6 +662,7 @@
                             android:src="@mipmap/moren" />
 
                         <TextView
+                            android:id="@+id/two_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/iv_f4"
@@ -671,6 +687,7 @@
                             android:background="@mipmap/home_img_frist" />
 
                         <com.project.my.studystarteacher.newteacher.view.CircleImageView
+                            android:id="@+id/one_icon"
                             android:layout_width="75dp"
                             android:layout_height="75dp"
                             android:layout_centerHorizontal="true"
@@ -678,6 +695,7 @@
                             android:src="@mipmap/moren" />
 
                         <TextView
+                            android:id="@+id/one_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/iv_f5"
@@ -702,6 +720,7 @@
                             android:background="@mipmap/home_img_third" />
 
                         <com.project.my.studystarteacher.newteacher.view.CircleImageView
+                            android:id="@+id/three_icon"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:layout_centerHorizontal="true"
@@ -709,6 +728,7 @@
                             android:src="@mipmap/moren" />
 
                         <TextView
+                            android:id="@+id/three_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/iv_f6"

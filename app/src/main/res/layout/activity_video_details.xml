@@ -26,28 +26,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="16dp"
-
             android:layout_marginTop="20dp"
+
+            android:layout_marginRight="16dp"
             android:gravity="center"
             android:text="学之星直播"
             android:textColor="@color/vk_white" />
 
         <TextView
+            android:id="@+id/visited_Count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
             android:layout_below="@id/tv_id"
-            android:layout_marginRight="16dp"
+            android:layout_alignParentRight="true"
             android:layout_marginTop="5dp"
+            android:layout_marginRight="16dp"
             android:background="@drawable/home_cic_wgray"
             android:drawableLeft="@mipmap/ic_numberofpeople"
             android:drawablePadding="5dp"
             android:gravity="center"
-            android:paddingBottom="3dp"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp"
             android:paddingTop="3dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="3dp"
             android:text="9.8万+"
             android:textColor="@color/vk_white" />
     </RelativeLayout>
@@ -96,7 +97,7 @@
                 android:layout_weight="1"
                 android:button="@null"
                 android:gravity="center"
-                android:text="课堂互动（9999）"
+                android:text="课堂互动（0）"
                 android:textColor="@color/video_color_selector"
                 android:textSize="16dp" />
 

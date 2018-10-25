@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
-import android.widget.EditText;
+import android.widget.TextView;
 
 import com.zhouqiang.framework.image.ImageCache;
 import com.zhouqiang.framework.image.ImageWorker;
@@ -237,7 +237,7 @@ public abstract class SanmiActivity extends AppCompatActivity {
      * @param str
      * @return true如果该字符串为null或者"",否则false
      */
-    protected boolean isNull(EditText str, String errMsg) {
+    protected boolean isNull(TextView str, String errMsg) {
         String trim = str.getText().toString().trim();
         boolean aNull = BaseUtil.isNull(trim);
         if (aNull) {

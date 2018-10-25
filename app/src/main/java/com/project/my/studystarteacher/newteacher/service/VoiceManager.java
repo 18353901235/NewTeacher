@@ -27,11 +27,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class VoiceManager {
-    private static final int STOP = 1;
-    private static final int RECORD = 2;
-    private static final int SUSPENDED = 3;
+    public static final int STOP = 1;
+    public static final int RECORD = 2;
+    public static final int SUSPENDED = 3;
     private static final int PLAY = 4;
-    private static int STATE_CODE = STOP;
+    public static int STATE_CODE = STOP;
 
     private ArrayList<File> mRecList = new ArrayList<File>();
     private Activity mActivity = null;
@@ -145,12 +145,12 @@ public class VoiceManager {
         stateOFPlay();
     }
 
-    private void stateOFPlay() {
+    public void stateOFPlay() {
         if (STATE_CODE == STOP) {
             mBtRec.setText("开始录音");
             mBtRec.setVisibility(View.VISIBLE);
-            btn_cl.setVisibility(View.GONE);
-            btn_zt.setVisibility(View.GONE);
+            // btn_cl.setVisibility(View.GONE);
+            //  btn_zt.setVisibility(View.GONE);
             mVRecRoot.setVisibility(View.GONE);
             //   mVPlaRoot.setVisibility(View.GONE);
             Drawable nav_up = mActivity.getResources().getDrawable(
@@ -188,8 +188,8 @@ public class VoiceManager {
             //   mVPlaRoot.setVisibility(View.GONE);
         } else if (STATE_CODE == PLAY) {
             mBtRec.setText("开始录音");
-            btn_cl.setVisibility(View.GONE);
-            btn_zt.setVisibility(View.GONE);
+            //   btn_cl.setVisibility(View.GONE);
+            //  btn_zt.setVisibility(View.GONE);
             mVRecRoot.setVisibility(View.GONE);
             mVPlaRoot.setVisibility(View.VISIBLE);
         }

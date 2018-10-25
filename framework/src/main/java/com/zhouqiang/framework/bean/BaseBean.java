@@ -15,7 +15,7 @@ public class BaseBean extends BaseObject implements Serializable {
     private String errorCode;// 服务器返回的错误编码 : 错误信息：status：0 此字段有效
     private String token;
     private Object info;
-
+    private Object data;
 
     public String getToken() {
         return token;
@@ -49,12 +49,20 @@ public class BaseBean extends BaseObject implements Serializable {
         this.errorCode = errorCode;
     }
 
+    public Object getData() {
+        return data;
+    }
+
+    public void setData(Object data) {
+        this.data = data;
+    }
+
     public void setInfo(Object info) {
-        this.info = info;
+        this.data = info;
     }
 
     public Object getInfo() {
-        return info;
+        return data;
     }
 
     @Override

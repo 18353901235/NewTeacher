@@ -44,9 +44,6 @@ public abstract class BaseActivity extends SanmiActivity {
 //            @Override
 //            public void onSuccess(SanmiNetWorker netWorker, SanmiNetTask netTask, BaseBean baseBean) {
         //   super.onSuccess(netWorker, netTask, baseBean);
-//                ToastUtil.showLongToast(mContext, (String) baseBean.getInfo());
-//                Glide.with(mContext).load(resultUri).into(imgFacade);
-//                UserSingleton.getInstance().getSysUser().setImgUrl(path);
 //            }
 //        });
 //        Worker.updateFacade(path);
@@ -55,6 +52,8 @@ public abstract class BaseActivity extends SanmiActivity {
     //  AndroidBug5497Workaround.assistActivity(this);//加上这一行,一定要在第一行
 //    setStatusColor();
 //    setSystemInvadeBlack();
+
+
     public static void ToActivity(Activity context, Class clazz) {
         context.startActivity(new Intent(context, clazz));
     }
@@ -133,7 +132,7 @@ public abstract class BaseActivity extends SanmiActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             // 状态栏透明
 //            getWindow().addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
-           getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 //            setStatusColor();
             setSystemInvadeBlack();
         }

@@ -42,6 +42,7 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/cd_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -49,6 +50,7 @@
             android:textSize="18dp" />
 
         <TextView
+            android:id="@+id/desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -131,11 +133,13 @@
         android:orientation="horizontal">
 
         <ImageView
+            android:id="@+id/paly_type"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@mipmap/allrond" />
 
         <ImageView
+            android:id="@+id/pre"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:background="@mipmap/goback" />
@@ -147,11 +151,13 @@
             android:background="@mipmap/play_btn_play" />
 
         <ImageView
+            android:id="@+id/next"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:background="@mipmap/gogo" />
 
         <ImageView
+            android:id="@+id/list"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:background="@mipmap/details" />

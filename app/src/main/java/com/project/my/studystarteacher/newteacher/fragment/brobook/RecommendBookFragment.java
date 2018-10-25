@@ -10,7 +10,7 @@ import com.project.my.studystarteacher.newteacher.common.TempSourceSupply;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 
-@ContentView(R.layout.fragment_book_bor_record_list)
+@ContentView(R.layout.fragment__record_list)
 public class RecommendBookFragment extends BaseFragment {
     @ViewInject(R.id.list)
     private PullToRefreshListView listView;

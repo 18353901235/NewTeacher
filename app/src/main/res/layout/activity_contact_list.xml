@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            style="@style/margin_16_10_16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:drawableRight="@mipmap/ic_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/contact_iv"
+                android:drawablePadding="10dp"
+                android:text="老师" />
+
+        </LinearLayout>
+
+        <com.project.my.studystarteacher.newteacher.view.AllListView
+            android:id="@+id/list"
+            style="@style/usuallistview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="16dp"
+
+            ></com.project.my.studystarteacher.newteacher.view.AllListView>
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

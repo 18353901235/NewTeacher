@@ -51,19 +51,19 @@ public class BorrowMangerActivity extends BaseFragmentActivity {
 
     @Override
     protected void init() {
-        //管理员老师
+//        //管理员老师
         mkHomeFragment = new BorMangFragment();
-        //普通老师
-        // mkHomeFragment = new BorNomalMangFragment();
+//        //普通老师
+//        // mkHomeFragment = new BorNomalMangFragment();
         ArrayList<BaseFragment> frg = new ArrayList<BaseFragment>();
         frg.add(mkHomeFragment);
         frg.add(mkTravelFragment);
         frg.add(mkMineFragment);
-        //frg.add(linMarketClass);
-
+//        //frg.add(linMarketClass);
+//
         linAllFragment.setAdapter(new BaseVPFAdapter(getSupportFragmentManager(), frg));
-        linAllFragment.setOffscreenPageLimit(4);
-
+        linAllFragment.setOffscreenPageLimit(3);
+//
         linHomePage.setSelected(true);
         linHomePage.setEnabled(false);
         initListener();

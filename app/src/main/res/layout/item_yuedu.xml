@@ -21,6 +21,7 @@
                 android:layout_height="match_parent" />
 
             <ImageView
+                android:id="@+id/bo"
                 android:layout_width="60dp"
                 android:layout_height="40dp"
                 android:layout_centerInParent="true"
@@ -35,8 +36,8 @@
             android:ellipsize="end"
             android:gravity="center_vertical"
             android:maxLength="7"
-            android:paddingBottom="5dp"
             android:paddingTop="5dp"
+            android:paddingBottom="5dp"
             android:singleLine="true"
             android:text="eee"
             android:textColor="@color/TextBlack"

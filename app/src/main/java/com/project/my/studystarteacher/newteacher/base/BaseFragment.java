@@ -33,6 +33,16 @@ public abstract class BaseFragment extends SanmiFragment {
         return x.view().inject(this, inflater, container);
         //return super.onCreateView(inflater, container, savedInstanceState);
     }
+    //  public void moban() {
+//        MiceNetWorker Worker = new MiceNetWorker(mContext);
+//        Worker.setOnTaskExecuteListener(new DemoNetTaskExecuteListener(mContext) {
+//            @Override
+//            public void onSuccess(SanmiNetWorker netWorker, SanmiNetTask netTask, BaseBean baseBean) {
+    //   super.onSuccess(netWorker, netTask, baseBean);
+//            }
+//        });
+//        Worker.updateFacade(path);
+//    }
 
 //    @PermissionGrant(10)
 //    public void requestAudioSuccess() {
@@ -136,10 +146,12 @@ public abstract class BaseFragment extends SanmiFragment {
         intent.putExtra("data2", type);
         context.startActivity(intent);
     }
+
     protected void setTopBackBg(int id) {
         RelativeLayout tvTitle = (RelativeLayout) findViewById(R.id.flAll);
         tvTitle.setBackgroundResource(id);
     }
+
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         this.view = view;
