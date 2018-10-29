@@ -128,6 +128,10 @@ public class MySettingActivity extends BaseActivity {
                 ToActivity(mContext, LoginActivity.class);
                 break;
             case R.id.submit:
+                if (loginClassBean != null) {
+                    return;
+                }
+
                 MiceNetWorker Worker = new MiceNetWorker(mContext);
                 Worker.setOnTaskExecuteListener(new DemoNetTaskExecuteListener(mContext) {
                     @Override

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.home.HistroyCommendActivity">
+
+    <include layout="@layout/title_bar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorTitleBg">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/margin_16_10_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/home_cic_white"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp">
+
+                    <ImageView
+                        android:id="@+id/iv_f"
+                        android:layout_width="80dp"
+                        android:layout_height="103dp"
+                        android:background="@mipmap/home_img_second" />
+
+                    <com.project.my.studystarteacher.newteacher.view.CircleImageView
+                        android:id="@+id/second_icon"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="28dp"
+                        android:src="@mipmap/moren" />
+
+                    <TextView
+                        android:id="@+id/second_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/iv_f"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="账务和" />
+
+                    <TextView
+                        android:id="@+id/sco"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/second_name"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="99.99分"
+                        android:textSize="20dp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <RelativeLayout
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp">
+
+                    <ImageView
+                        android:id="@+id/iv_f3"
+                        android:layout_width="80dp"
+                        android:layout_height="103dp"
+                        android:background="@mipmap/home_img_third" />
+
+                    <com.project.my.studystarteacher.newteacher.view.CircleImageView
+                        android:id="@+id/third_icon"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="28dp"
+                        android:src="@mipmap/moren" />
+
+                    <TextView
+                        android:id="@+id/third_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/iv_f3"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="账务和" />
+
+                    <TextView
+                        android:id="@+id/sco3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/third_name"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_horizontal"
+                        android:text="99.99分"
+                        android:textSize="20dp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/list"
+                style="@style/margin_16_16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/vk_white"></ListView>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/home_cic_white"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/iv_f2"
+                android:layout_width="90dp"
+                android:layout_height="116dp"
+                android:background="@mipmap/home_img_frist" />
+
+            <com.project.my.studystarteacher.newteacher.view.CircleImageView
+                android:id="@+id/first_icon"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="34dp"
+                android:src="@mipmap/moren" />
+
+            <TextView
+                android:id="@+id/first_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/iv_f2"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text="账务和" />
+
+            <TextView
+                android:id="@+id/sco1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/first_name"
+                android:layout_marginTop="10dp"
+                android:gravity="center_horizontal"
+                android:text="99.99分"
+                android:textSize="20dp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</LinearLayout>

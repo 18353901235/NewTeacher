@@ -2,9 +2,10 @@ package com.project.my.studystarteacher.newteacher.bean;
 
 import com.project.my.studystarteacher.newteacher.adapter.IvAdapter;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class DyNamicBean {
+public class DyNamicBean implements Serializable {
 
     /**
      * headImg : http://app.xuezhixing.net:8080/image/7878/01/photo/1518052723761_Thead.jpg
@@ -149,7 +150,7 @@ public class DyNamicBean {
         this.Comments = Comments;
     }
 
-    public static class CommentsBean {
+    public static class CommentsBean implements Serializable {
         /**
          * id : 8432
          * name : 殷小强

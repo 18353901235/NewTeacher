@@ -9,11 +9,16 @@ import com.project.my.studystarteacher.newteacher.base.BaseActivity;
 import com.project.my.studystarteacher.newteacher.bean.DyNamicBean;
 import com.project.my.studystarteacher.newteacher.net.DemoNetTaskExecuteListener;
 import com.project.my.studystarteacher.newteacher.net.MiceNetWorker;
+import com.project.my.studystarteacher.newteacher.utils.EventBusUtil;
+import com.project.my.studystarteacher.newteacher.utils.EventWhatId;
 import com.zhouqiang.framework.bean.BaseBean;
 import com.zhouqiang.framework.net.SanmiNetTask;
 import com.zhouqiang.framework.net.SanmiNetWorker;
 import com.zhouqiang.framework.util.JsonUtil;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 
@@ -27,6 +32,7 @@ public class ReadActviActivity extends BaseActivity {
     @Override
     protected void init() {
         getCommonTitle().setText("悦读活动");
+        EventBus.getDefault().register(this);
         getRight().setBackgroundResource(R.mipmap.ic_add);
         getRight().setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,6 +41,13 @@ public class ReadActviActivity extends BaseActivity {
             }
         });
         getData();
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void refrsh(EventBusUtil u) {
+        if (u.getMsgWhat() == EventWhatId.REFRSH) {
+            getData();
+        }
     }
 
     //dynamic/dynamicFunction
@@ -48,10 +61,14 @@ public class ReadActviActivity extends BaseActivity {
                 ArrayList<DyNamicBean> dyNamicBeans = JsonUtil.fromList((String) baseBean.getData(), "resultObject", DyNamicBean.class);
                 HomeActiviAdapter adapter = new HomeActiviAdapter(mContext, R.layout.activi_list_item, dyNamicBeans);
                 list.setAdapter(adapter);
-
             }
         });
         Worker.dynamicFunction("1", "", "", "", "");
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
 }

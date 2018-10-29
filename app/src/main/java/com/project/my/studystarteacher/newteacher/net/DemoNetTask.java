@@ -30,39 +30,30 @@ public class DemoNetTask<T> extends SanmiNetTask {
     public DemoNetTask(DemoHttpInformation information,
                        HashMap<String, String> params, HashMap<String, String> files, Class<T> clazz) {
         super(information, params, files, clazz);
-//        //加密逻辑
-//        HashMap<String, String> encodeHashMap = null;
-//        if (params != null) {
-//            Logger.d("请求数据：" + params.toString());
-//            encodeHashMap = new HashMap<>();
-//            //  encodeHashMap.put("token", params.get("token"));
+        //加密逻辑
+        if (params != null) {
+            //  encodeHashMap.put("token", params.get("token"));
 //            if (UserSingleton.isLogin()) {
 //                params.put("token", URLEncoder.encode(SharedPreferencesUtil.get(MiceApplication.getInstance(), ProjectConstant.TOKEN)));
 //            }
-//
-//            //----------------------------删除城市ID
-////            if (ProjectConstant.ISREMOVECITYID && information != DemoHttpInformation.UPDATE && information != DemoHttpInformation.SELECTSCENICLIST) {
-////                if (params.containsKey("provinceId") || params.containsKey("cityId")) {
-////                    params.remove("provinceId");
-////                    params.remove("cityId");
-////                }
-////            }
+
+            //----------------------------删除城市ID
+//            if (ProjectConstant.ISREMOVECITYID && information != DemoHttpInformation.UPDATE && information != DemoHttpInformation.SELECTSCENICLIST) {
+//                if (params.containsKey("provinceId") || params.containsKey("cityId")) {
+//                    params.remove("provinceId");
+//                    params.remove("cityId");
+//                }
+//            }
 //            Logger.d("最终发送数据：：" + params.toString());
-//            String paramsJson = JsonUtil.BeanToJson(params);
-//            //   if (information == DemoHttpInformation.UPDATEICON || information == DemoHttpInformation.INSERTCOMMENTS) {
-//            if (null == files) {
-//                encodeHashMap.put("data", URLEncoder.encode(RSAUtils.encryptByPrivateKey(paramsJson)));
+//            if (information == DemoHttpInformation.DYNAMICUPLOAD) {
+//                params.put("content", URLEncoder.encode(params.get("content")));
+//            }
 //            } else {
-//                encodeHashMap.put("data", RSAUtils.encryptByPrivateKey(paramsJson));
+//                encodeHashMap.put("data", URLEncoder.encode(RSAUtils.encryptByPrivateKey(paramsJson)));
 //            }
-////            } else {
-////                encodeHashMap.put("data", URLEncoder.encode(RSAUtils.encryptByPrivateKey(paramsJson)));
-////            }
-//            if (information != DemoHttpInformation.JINGQUDAOHANG) {
-//                setParams(encodeHashMap);
-//            }
-//
-//        }
+
+
+        }
 
     }
 

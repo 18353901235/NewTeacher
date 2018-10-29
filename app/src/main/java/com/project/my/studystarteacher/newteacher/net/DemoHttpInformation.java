@@ -30,6 +30,9 @@ public enum DemoHttpInformation implements SanmiHttpInfomation {
     GETEXPERTLECTURE(1, "homepage/getExpertLecture", "获取专家讲堂数据", false),
     GETEXPERTLECTUREBYID(1, "homepage/getExpertLectureById ", "专家讲堂详细数据", false),
     INTERACT(1, "live/interact", "互动列表", false),
+    COUNT(1, "red/count", "红包 ", false),
+    STATISTICS(1, "survey/statistics", " 调研统计", false),
+
 
     PUBLISH(1, "live/publish", "发表评论", false),
 
@@ -68,7 +71,8 @@ public enum DemoHttpInformation implements SanmiHttpInfomation {
     //----------
     //------------------我的
     GETINFO(1, "teacher/getInfo", "获取个人信息", false),
-
+    TOANSWER(1, "http://app.xuezhixing.net:8080/xmanager/appAnswer/toAnswer.do", "调研分享", true),
+    SHARED(1, "http://app.xuezhixing.net:8081/TearcherService/pay/shared", "调研分享", true),
     PERFECTINFO(1, "teacher/perfectInfo", "完善个人设置（不包含上传头像）", false),
 
 

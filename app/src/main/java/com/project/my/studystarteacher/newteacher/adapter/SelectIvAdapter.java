@@ -33,7 +33,8 @@ public class SelectIvAdapter extends CommonAdapter<Media> {
         } else if (item.getPath().startsWith("drawable://")) {
             imageUtility.showImage(item.getPath(), iv);
         } else {
-            imageUtility.showImage("file://" + item.getPath(), iv);
+            String storage = item.getPath().replaceAll("/storage", "storage");
+            imageUtility.showImage("file://" + storage, iv);
         }
     }
 

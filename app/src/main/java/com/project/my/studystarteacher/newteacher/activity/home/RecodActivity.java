@@ -1,8 +1,10 @@
 package com.project.my.studystarteacher.newteacher.activity.home;
 
+import android.Manifest;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.project.my.studystarteacher.newteacher.R;
 import com.project.my.studystarteacher.newteacher.base.BaseActivity;
@@ -19,6 +21,9 @@ import com.zhouqiang.framework.net.SanmiNetTask;
 import com.zhouqiang.framework.net.SanmiNetWorker;
 import com.zhouqiang.framework.util.Logger;
 import com.zhouqiang.framework.util.ToastUtil;
+import com.zhy.m.permission.MPermissions;
+import com.zhy.m.permission.PermissionDenied;
+import com.zhy.m.permission.PermissionGrant;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -49,11 +54,27 @@ public class RecodActivity extends BaseActivity {
 
     }
 
+    @PermissionGrant(0)
+    public void requestSdcardSuccess() {
+    }
+
+    @PermissionDenied(0)
+    public void requestSdcardFailed() {
+        Toast.makeText(mContext, "权限授权失败，无法录制音频", Toast.LENGTH_SHORT).show();
+    }
+
+    public void requestPermiss() {
+        MPermissions.requestPermissions(this, 0, Manifest.permission
+                        .RECORD_AUDIO,
+                Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+    }
+
     AudioBook book;
 
     @Override
     protected void init() {
         EventBus.getDefault().register(this);
+        requestPermiss();
         book = (AudioBook) getIntent().getSerializableExtra("data");
         boolN.setText("《" + book.getBookname() + "》");
         getCommonTitle().setText("音频录制");

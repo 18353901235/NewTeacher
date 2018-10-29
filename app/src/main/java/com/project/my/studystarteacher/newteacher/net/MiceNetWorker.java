@@ -90,6 +90,21 @@ public class MiceNetWorker extends SanmiNetWorker {
         executeTask(information, params);
     }
 
+    public void count() {
+        DemoHttpInformation information = DemoHttpInformation.COUNT;
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
+        executeTask(information, params);
+    }
+
+    public void statistics() {
+        DemoHttpInformation information = DemoHttpInformation.STATISTICS;
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
+        executeTask(information, params);
+    }
+
+
     public void getBanner() {
         DemoHttpInformation information = DemoHttpInformation.GETBANNER;
         HashMap<String, String> params = new HashMap<String, String>();
@@ -295,28 +310,31 @@ public class MiceNetWorker extends SanmiNetWorker {
         params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
         params.put("content", content);
         HashMap<String, String> files = new HashMap<>();
-        if (arrayList.size() > 0) {
-            final StringBuffer buffer = new StringBuffer();
-            for (int i = 0; i < arrayList.size(); i++) {
-                if (i == 0) {
-                    buffer.append(arrayList.get(i).getPath());
-                } else {
-                    buffer.append("," + arrayList.get(i).getPath());
+        if (isNull(videoPath)) {
+            if (arrayList.size() > 0) {
+                final StringBuffer buffer = new StringBuffer();
+                for (int i = 0; i < arrayList.size(); i++) {
+                    if (i == 0) {
+                        buffer.append(arrayList.get(i).getPath());
+                    } else {
+                        buffer.append("," + arrayList.get(i).getPath());
+                    }
+                }
+                files.put("files", buffer.toString());
+            } else {
+                if (!isNull(videoPath)) {
+                    files.put("files", videoPath);
                 }
             }
-            files.put("files", buffer.toString());
-        } else {
-            if (!isNull(videoPath)) {
-                files.put("files", videoPath);
+            if (files.size() > 0) {
+                executeTask(information, params, files, true);
+            } else {
+                executeTask(information, params);
             }
-        }
-
-        if (files.size() > 0) {
-            executeTask(information, params, files, true);
         } else {
-            executeTask(information, params);
+            files.put("files", videoPath);
+            executeTask(information, params, files, true);
         }
-
     }
 
     public void removeBlackList(String parentId) {
@@ -370,6 +388,12 @@ public class MiceNetWorker extends SanmiNetWorker {
         executeTask(information, params);
     }
 
+    public void Share() {
+        DemoHttpInformation information = DemoHttpInformation.SHARED;
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
+        executeTask(information, params);
+    }
 
     //type的类型,1是返回动态列表2是点赞,3是取消点赞,4添加评论,7删除
     public void dynamicFunction(String type, String comments, String id, String praiscount, String requestPagenum) {
@@ -418,13 +442,11 @@ public class MiceNetWorker extends SanmiNetWorker {
         params.put("pageNum", pageNum);
         params.put("bookName", bookName);
         if (!isNull(pageNum)) {
-
             params.put("pageSize", "10");
         } else {
             params.put("pageNum", "1");
-            params.put("pageSize", "999");
+            params.put("pageSize", "100");
         }
-
         executeTask(information, params);
     }
 

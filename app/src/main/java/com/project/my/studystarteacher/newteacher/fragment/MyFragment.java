@@ -12,13 +12,20 @@ import com.project.my.studystarteacher.newteacher.activity.my.ContactActivity;
 import com.project.my.studystarteacher.newteacher.activity.my.LoveBossActivity;
 import com.project.my.studystarteacher.newteacher.activity.my.MySettingActivity;
 import com.project.my.studystarteacher.newteacher.base.BaseFragment;
+import com.project.my.studystarteacher.newteacher.bean.sharebean;
 import com.project.my.studystarteacher.newteacher.common.CommonWebViewActivity;
 import com.project.my.studystarteacher.newteacher.common.ProjectConstant;
+import com.project.my.studystarteacher.newteacher.common.UserSingleton;
+import com.project.my.studystarteacher.newteacher.net.DemoHttpInformation;
+import com.zhouqiang.framework.util.JsonUtil;
 import com.zhouqiang.framework.util.ToastUtil;
 
+import org.xutils.common.Callback;
+import org.xutils.http.RequestParams;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
+import org.xutils.x;
 
 @ContentView(R.layout.fragment_mine)
 public class MyFragment extends BaseFragment {
@@ -58,6 +65,42 @@ public class MyFragment extends BaseFragment {
         getRight().setBackgroundResource(R.mipmap.me_ic_scan);
     }
 
+    public void toAnswer() {
+
+
+        RequestParams params = new RequestParams(DemoHttpInformation.TOANSWER.getUrlPath() + "?zybhao=" + UserSingleton.getInstance().getSysUser().getMain() + "&fybhao=" + UserSingleton.getInstance().getSysUser().getPart() + "&classID=" + UserSingleton.getInstance().getSysUser().getBji());
+
+        x.http().get(params, new Callback.CommonCallback<String>() {
+            @Override
+            public void onSuccess(String result) {
+                try {
+                    sharebean sharebean = JsonUtil.fromBean(result, sharebean.class);
+                    Intent intent = new Intent(mContext, CommonWebViewActivity.class);
+                    intent.putExtra(ProjectConstant.WV_TITLE, sharebean.getTitle());
+                    intent.putExtra(ProjectConstant.WV_URL, "http://app.xuezhixing.net:8080/" + sharebean.getUrl());
+                    startActivity(intent);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
+            }
+        });
+    }
+
     @Event({R.id.icon, R.id.name, R.id.why_, R.id.activ_msg, R.id.love, R.id.contact, R.id.setting, R.id.read_flow, R.id.read_manager, R.id.open_tv, R.id.add_book, R.id.open_door, R.id.ly_main_weixin})
     private void onViewClicked(View view) {
         Intent intent;
@@ -67,7 +110,7 @@ public class MyFragment extends BaseFragment {
             case R.id.name:
                 break;
             case R.id.why_:
-                ToActivity(mContext, LoveBossActivity.class);
+                toAnswer();
                 break;
             case R.id.activ_msg:
                 intent = new Intent(mContext, CommonWebViewActivity.class);

@@ -1,5 +1,6 @@
 package com.project.my.studystarteacher.newteacher.activity.home;
 
+import android.Manifest;
 import android.content.Intent;
 import android.view.View;
 import android.widget.AdapterView;
@@ -7,6 +8,7 @@ import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.dmcbig.mediapicker.PickerActivity;
 import com.dmcbig.mediapicker.PickerConfig;
@@ -23,6 +25,9 @@ import com.zhouqiang.framework.bean.BaseBean;
 import com.zhouqiang.framework.net.SanmiNetTask;
 import com.zhouqiang.framework.net.SanmiNetWorker;
 import com.zhouqiang.framework.util.ToastUtil;
+import com.zhy.m.permission.MPermissions;
+import com.zhy.m.permission.PermissionDenied;
+import com.zhy.m.permission.PermissionGrant;
 
 import org.greenrobot.eventbus.EventBus;
 import org.xutils.view.annotation.ContentView;
@@ -54,8 +59,24 @@ public class WornSignActivity extends BaseActivity {
     SelectIvAdapter selectIvAdapter;
     ArrayList<Media> select;
 
+    @PermissionGrant(0)
+    public void requestSdcardSuccess() {
+    }
+
+    @PermissionDenied(0)
+    public void requestSdcardFailed() {
+        Toast.makeText(mContext, "权限授权失败，可能部分功能无法使用", Toast.LENGTH_SHORT).show();
+    }
+
+    public void requestPermiss() {
+        MPermissions.requestPermissions(this, 0, Manifest.permission
+                        .CAMERA,
+                Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+    }
+
     @Override
     protected void init() {
+        requestPermiss();
         getCommonTitle().setText("破损登记");
         getRightTextView().setText("提交");
         nll = new Media("drawable://" + R.mipmap.communication_content_camera02, "", 0, 0, 0, 0, "");

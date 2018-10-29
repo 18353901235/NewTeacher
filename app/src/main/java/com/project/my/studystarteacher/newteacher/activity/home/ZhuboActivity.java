@@ -49,10 +49,8 @@ public class ZhuboActivity extends BaseActivity {
     @Override
     protected void init() {
         EventBus.getDefault().register(this);
-        getRight().setBackgroundResource(R.mipmap.musicbk_ic_search);
+        // getRight().setBackgroundResource(R.mipmap.musicbk_ic_search);
         getCommonTitle().setText("主播");
-
-
         list.setOnItemClickListener(getListener());
         findViewById(R.id.bt_1).setOnClickListener(new View.OnClickListener() {
             @Override

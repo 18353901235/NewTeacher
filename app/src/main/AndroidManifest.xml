@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.project.my.studystarteacher.newteacher">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -252,7 +253,18 @@
             android:name="JPUSH_CHANNEL"
             android:value="developer-default" />
         <!-- 7c51df5cafb744eb29b123d3 -->
-
+        <!--
+            <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.zq.customview.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/filepaths"
+                tools:replace="android:authorities" />
+        </provider>
+        -->
         <meta-data
             android:name="JPUSH_APPKEY"
             android:value="ad7b0bbf07639831b1eaf7ca" />
@@ -300,8 +312,13 @@
         <activity android:name=".login.SelectClassActivity" />
         <activity android:name=".common.CommonWebViewActivity" />
         <activity android:name=".activity.my.MySettingActivity" />
-        <activity android:name="com.project.my.studystarteacher.newteacher.share.ShareActivity" />
-
+        <activity android:name=".album.PicturePickActivity" />
+        <activity
+            android:name=".share.ShareActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MyDialogStyleBottom" />
+        <activity android:name=".activity.home.PublicCommentActivity" />
+        <activity android:name=".activity.home.YueDuBangActivity"></activity>
     </application>
 
 </manifest>

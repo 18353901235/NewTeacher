@@ -88,5 +88,9 @@ dependencies {
     implementation project(':mediapicker')
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.6'
+    implementation 'com.zhy:mpermission-compiler:1.0.0'
+    annotationProcessor 'com.zhy:mpermission-compiler:1.0.0'
+    implementation 'com.zhy:mpermission-api:1.0.0'
+
 
 }
