@@ -24,7 +24,7 @@ public class BookBormangerNoamlAdapter extends CommonAdapter<ClassBorBook> {
     }
 
     @Override
-    protected void convert(ViewHolder viewHolder, ClassBorBook item, int position) {
+    protected void convert(ViewHolder viewHolder, final ClassBorBook item, int position) {
 
         viewHolder.setText(R.id.userName, item.getXs_xming());
         viewHolder.setText(R.id.num, item.getDamage_times() + "");
@@ -36,6 +36,7 @@ public class BookBormangerNoamlAdapter extends CommonAdapter<ClassBorBook> {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, BorRecommendActivity.class);
+                intent.putExtra("data", item.getXs_id());
                 mContext.startActivity(intent);
             }
         });
@@ -43,6 +44,7 @@ public class BookBormangerNoamlAdapter extends CommonAdapter<ClassBorBook> {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, HistroyCommendActivity.class);
+                intent.putExtra("data", item.getXs_id());
                 mContext.startActivity(intent);
             }
         });

@@ -13,11 +13,13 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="崔松鼠" />
 
         <TextView
+            android:id="@+id/time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="07/11" />
@@ -58,6 +60,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/bagNum"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
@@ -65,22 +68,28 @@
                 android:textColor="@color/black_deep" />
 
             <TextView
+                android:id="@+id/oneBook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="《飒飒撒旦撒》" />
+                android:text="《飒飒撒旦撒》"
+                android:visibility="gone" />
 
             <TextView
+                android:id="@+id/twoBook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="《飒飒撒旦撒》" />
+                android:text="《飒飒撒旦撒》"
+                android:visibility="gone" />
 
             <TextView
+                android:id="@+id/threeBook"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="《飒飒撒旦撒》" />
+                android:text="《飒飒撒旦撒》"
+                android:visibility="gone" />
         </LinearLayout>
 
         <LinearLayout
@@ -97,6 +106,7 @@
                 android:background="@mipmap/yue" />
 
             <TextView
+                android:id="@+id/status"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"

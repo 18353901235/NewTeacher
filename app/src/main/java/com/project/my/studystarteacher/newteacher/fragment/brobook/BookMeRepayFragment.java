@@ -17,6 +17,7 @@ import com.zhouqiang.framework.bean.BaseBean;
 import com.zhouqiang.framework.net.SanmiNetTask;
 import com.zhouqiang.framework.net.SanmiNetWorker;
 import com.zhouqiang.framework.util.JsonUtil;
+import com.zhouqiang.framework.util.ToastUtil;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -92,6 +93,19 @@ public class BookMeRepayFragment extends BaseFragment {
             }
             adapter.notifyDataSetChanged();
         }
+        if (u.getMsgWhat() == EventWhatId.SUBMITREPAY) {//提交
+            String s = JsonUtil.BeanToJson(checkList);
+            MiceNetWorker Worker = new MiceNetWorker(mContext);
+            Worker.setOnTaskExecuteListener(new DemoNetTaskExecuteListener(mContext) {
+                @Override
+                public void onSuccess(SanmiNetWorker netWorker, SanmiNetTask netTask, BaseBean baseBean) {
+                    super.onSuccess(netWorker, netTask, baseBean);
+                    ToastUtil.showLongToast(mContext, JsonUtil.fromString((String) baseBean.getData(), "msg"));
+                }
+            });
+            Worker.giveBackBags(s);
+
+        }
     }
 
     ArrayList<MeRepayBook> dataList;
@@ -108,6 +122,11 @@ public class BookMeRepayFragment extends BaseFragment {
                 JSONArray timeList = parse.getJSONArray("timeList");
                 JSONObject noGivebackList = parse.getJSONObject("noGivebackList");
                 dataList = new ArrayList<>();
+                if (timeList == null) {
+//                    String msg = JsonUtil.fromString((String) baseBean.getData(), "msg");
+//                    ToastUtil.showLongToast(mContext,msg);
+                    return;
+                }
                 for (int i = 0; i < timeList.size(); i++) {
                     ArrayList<MeRepayBook> meRepayBooks = JsonUtil.fromList(noGivebackList.toJSONString(), (String) timeList.get(i), MeRepayBook.class);
                     dataList.addAll(meRepayBooks);

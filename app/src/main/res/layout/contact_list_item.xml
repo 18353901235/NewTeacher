@@ -14,18 +14,21 @@
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/userName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="安青青"
             android:textColor="@color/black_deep" />
 
         <TextView
+            android:id="@+id/phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="133333333" />
     </LinearLayout>
 
     <ImageView
+        android:id="@+id/call"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_gravity="center_vertical"

@@ -8,7 +8,9 @@ import com.project.my.studystarteacher.newteacher.R;
 import com.project.my.studystarteacher.newteacher.adapter.BaseVPFAdapter;
 import com.project.my.studystarteacher.newteacher.base.BaseFragment;
 import com.project.my.studystarteacher.newteacher.base.BaseFragmentActivity;
+import com.project.my.studystarteacher.newteacher.common.UserSingleton;
 import com.project.my.studystarteacher.newteacher.fragment.brobook.BorMangFragment;
+import com.project.my.studystarteacher.newteacher.fragment.brobook.BorNomalMangFragment;
 import com.project.my.studystarteacher.newteacher.fragment.brobook.RepayMangFragment;
 import com.project.my.studystarteacher.newteacher.fragment.brobook.WornMangFragment;
 
@@ -52,9 +54,15 @@ public class BorrowMangerActivity extends BaseFragmentActivity {
     @Override
     protected void init() {
 //        //管理员老师
-        mkHomeFragment = new BorMangFragment();
-//        //普通老师
-//        // mkHomeFragment = new BorNomalMangFragment();
+        if (UserSingleton.getInstance().getSysUser().getBookmanager() == 2) {
+            mkHomeFragment = new BorMangFragment();
+        } else {
+            //普通老师
+            mkHomeFragment = new BorNomalMangFragment();
+        }
+
+//        //
+
         ArrayList<BaseFragment> frg = new ArrayList<BaseFragment>();
         frg.add(mkHomeFragment);
         frg.add(mkTravelFragment);

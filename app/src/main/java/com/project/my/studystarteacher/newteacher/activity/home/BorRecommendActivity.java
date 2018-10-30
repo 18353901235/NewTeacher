@@ -8,7 +8,9 @@ import com.project.my.studystarteacher.newteacher.R;
 import com.project.my.studystarteacher.newteacher.adapter.BaseVPFAdapter;
 import com.project.my.studystarteacher.newteacher.base.BaseFragment;
 import com.project.my.studystarteacher.newteacher.base.BaseFragmentActivity;
+import com.project.my.studystarteacher.newteacher.fragment.brobook.RecommendBBookFragment;
 import com.project.my.studystarteacher.newteacher.fragment.brobook.RecommendBookFragment;
+import com.project.my.studystarteacher.newteacher.fragment.brobook.RecommendCBookFragment;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -20,9 +22,9 @@ import java.util.ArrayList;
 public class BorRecommendActivity extends BaseFragmentActivity {
     @ViewInject(R.id.rg)
     private RadioGroup group;
-    private RecommendBookFragment test1 = new RecommendBookFragment();
-    private RecommendBookFragment test2 = new RecommendBookFragment();
-    private RecommendBookFragment test3 = new RecommendBookFragment();
+    private RecommendBookFragment test1;
+    private RecommendBBookFragment test2;
+    private RecommendCBookFragment test3;
     /**
      * 加载所有fragment
      */
@@ -33,10 +35,15 @@ public class BorRecommendActivity extends BaseFragmentActivity {
     public void init() {
         getCommonTitle().setText("手工推荐");
         ArrayList<BaseFragment> frg = new ArrayList<BaseFragment>();
+        int data = getIntent().getIntExtra("data", -1);
+        test1 = new RecommendBookFragment(data);
+        test2 = new RecommendBBookFragment(data);
+        test3 = new RecommendCBookFragment(data);
         frg.add(test1);
         frg.add(test2);
         frg.add(test3);
         linAllFragment.setAdapter(new BaseVPFAdapter(getSupportFragmentManager(), frg));
+        linAllFragment.setOffscreenPageLimit(3);
         group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -45,7 +52,7 @@ public class BorRecommendActivity extends BaseFragmentActivity {
                     getRight().setBackground(null);
                 } else if (checkedId == R.id.two) {
                     linAllFragment.setCurrentItem(1);
-                    getRight().setBackgroundResource(R.mipmap.musicbk_ic_search);
+                    //getRight().setBackgroundResource(R.mipmap.musicbk_ic_search);
                 } else if (checkedId == R.id.three) {
                     getRight().setBackground(null);
                     linAllFragment.setCurrentItem(2);

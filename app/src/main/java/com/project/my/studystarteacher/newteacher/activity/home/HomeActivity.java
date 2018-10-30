@@ -14,12 +14,16 @@ import com.project.my.studystarteacher.newteacher.common.UserSingleton;
 import com.project.my.studystarteacher.newteacher.fragment.HomeFragment;
 import com.project.my.studystarteacher.newteacher.fragment.MyFragment;
 import com.project.my.studystarteacher.newteacher.fragment.VideoFragment;
+import com.project.my.studystarteacher.newteacher.utils.EventBusUtil;
+import com.project.my.studystarteacher.newteacher.utils.EventWhatId;
 import com.project.my.studystarteacher.newteacher.utils.ToastUtility;
 import com.zhouqiang.framework.BaseActivityManager;
 import com.zhouqiang.framework.util.Logger;
 import com.zhouqiang.framework.util.SharedPreferencesUtil;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 
@@ -65,6 +69,7 @@ public class HomeActivity extends BaseFragmentActivity {
 
     @Override
     protected void init() {
+        EventBus.getDefault().register(this);
         ArrayList<BaseFragment> frg = new ArrayList<BaseFragment>();
         frg.add(mkHomeFragment);
         frg.add(mkTravelFragment);
@@ -79,6 +84,18 @@ public class HomeActivity extends BaseFragmentActivity {
         initListener();
         getVersion();
         StatusUtil.setSystemStatus(mContext, true, true);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void update(EventBusUtil e) {
+        if (e.getMsgWhat() == EventWhatId.TOVIDEO) {
+            clearAllSelect();
+            linAllFragment.setCurrentItem(1, false);
+//                tabMainEnum = MkTabMainEnum.MARKET_ClASS;
+//                setFragmentSelect();
+            linMarketClass.setSelected(true);
+            linMarketClass.setEnabled(false);
+        }
     }
 
     @Override

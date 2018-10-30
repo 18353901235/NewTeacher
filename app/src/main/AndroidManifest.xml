@@ -319,6 +319,7 @@
             android:theme="@style/MyDialogStyleBottom" />
         <activity android:name=".activity.home.PublicCommentActivity" />
         <activity android:name=".activity.home.YueDuBangActivity"></activity>
-    </application>
+        <activity android:name="com.project.my.studystarteacher.newteacher.activity.home.CaptureActivity"></activity>
 
+    </application>
 </manifest>

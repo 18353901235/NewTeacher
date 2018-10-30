@@ -90,6 +90,30 @@ public class MiceNetWorker extends SanmiNetWorker {
         executeTask(information, params);
     }
 
+    public void phoneBook() {
+        DemoHttpInformation information = DemoHttpInformation.PHONEBOOK;
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
+        executeTask(information, params);
+    }
+
+    public void giveBarcodeBackBags(String schoolbagbhao) {
+        DemoHttpInformation information = DemoHttpInformation.GIVEBARCODEBACKBAGS;
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
+        params.put("schoolbagbhao", schoolbagbhao + "");
+
+        executeTask(information, params);
+    }
+
+    public void getNewHistoryRecommended(int studentId) {
+        DemoHttpInformation information = DemoHttpInformation.GETNEWHISTORYRECOMMENDED;
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
+        params.put("studentId", studentId + "");
+        executeTask(information, params);
+    }
+
     public void count() {
         DemoHttpInformation information = DemoHttpInformation.COUNT;
         HashMap<String, String> params = new HashMap<String, String>();
@@ -165,6 +189,41 @@ public class MiceNetWorker extends SanmiNetWorker {
 
     public void getActivityRanking() {
         DemoHttpInformation information = DemoHttpInformation.GETACTIVITYRANKING;
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
+        executeTask(information, params);
+    }
+
+    public void listLive(String type) {
+        DemoHttpInformation information = DemoHttpInformation.LISTLIVE;
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
+
+        params.put("type", type + "");
+        executeTask(information, params);
+    }
+
+    public void getRecommendBookList(String studentId) {
+        DemoHttpInformation information = DemoHttpInformation.GETRECOMMENDBOOKLIST;
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
+
+        params.put("studentId", studentId);
+        executeTask(information, params);
+    }
+
+    public void makeRecommendedBagToOneStudent(String studentId, String bagNo) {
+        DemoHttpInformation information = DemoHttpInformation.MAKERECOMMENDEDBAGTOONESTUDENT;
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
+
+        params.put("studentId", studentId);
+        params.put("bagNo", bagNo);
+        executeTask(information, params);
+    }
+
+    public void typeLive() {
+        DemoHttpInformation information = DemoHttpInformation.TYPELIVE;
         HashMap<String, String> params = new HashMap<String, String>();
         params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
         executeTask(information, params);
@@ -418,6 +477,28 @@ public class MiceNetWorker extends SanmiNetWorker {
         HashMap<String, String> params = new HashMap<String, String>();
         params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
         params.put("id", id);
+        executeTask(information, params);
+    }
+
+    public void bookcaseStatus() {
+        DemoHttpInformation information = DemoHttpInformation.STATUSBOOKCASE;
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
+        executeTask(information, params);
+    }
+
+    public void switchannel() {
+        DemoHttpInformation information = DemoHttpInformation.SWITCHANNEL;
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
+        executeTask(information, params);
+    }
+
+    public void giveBackBags(String schoolbagbhao) {
+        DemoHttpInformation information = DemoHttpInformation.GIVEBACKBAGS;
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
+        params.put("schoolbagbhao", schoolbagbhao);
         executeTask(information, params);
     }
 

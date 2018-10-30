@@ -13,4 +13,10 @@ public class EventWhatId {
     public static int RECODE_START = 9;
     public static int RECODE_RESET = 10;
     public static int RECODE_UPOK = 11;
+    public static int TOVIDEO = 12;
+    public static int A = 13;
+    public static int B = 14;
+    public static int C = 15;
+    public static int SUBMITREPAY = 16;
+    public static int REPAYSCAN = 17;
 }

@@ -1,8 +1,9 @@
 package com.project.my.studystarteacher.newteacher.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class ClassBorBook {
+public class ClassBorBook implements Serializable {
 
     /**
      * xs_id : 504647

@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.project.my.studystarteacher.newteacher.R;
+import com.project.my.studystarteacher.newteacher.activity.home.CaptureActivity;
 import com.project.my.studystarteacher.newteacher.activity.my.ContactActivity;
 import com.project.my.studystarteacher.newteacher.activity.my.LoveBossActivity;
 import com.project.my.studystarteacher.newteacher.activity.my.MySettingActivity;
@@ -17,6 +18,12 @@ import com.project.my.studystarteacher.newteacher.common.CommonWebViewActivity;
 import com.project.my.studystarteacher.newteacher.common.ProjectConstant;
 import com.project.my.studystarteacher.newteacher.common.UserSingleton;
 import com.project.my.studystarteacher.newteacher.net.DemoHttpInformation;
+import com.project.my.studystarteacher.newteacher.net.DemoNetTaskExecuteListener;
+import com.project.my.studystarteacher.newteacher.net.MiceNetWorker;
+import com.project.my.studystarteacher.newteacher.utils.ImageUtility;
+import com.zhouqiang.framework.bean.BaseBean;
+import com.zhouqiang.framework.net.SanmiNetTask;
+import com.zhouqiang.framework.net.SanmiNetWorker;
 import com.zhouqiang.framework.util.JsonUtil;
 import com.zhouqiang.framework.util.ToastUtil;
 
@@ -57,17 +64,30 @@ public class MyFragment extends BaseFragment {
     private LinearLayout openDoor;
     @ViewInject(R.id.ly_main_weixin)
     private LinearLayout lyMainWeixin;
+    ImageUtility imageUtility;
 
     @Override
     public void init() {
         getLeft().setVisibility(View.GONE);
         getCommonTitle().setText("我的");
+        imageUtility = new ImageUtility(R.mipmap.moren);
         getRight().setBackgroundResource(R.mipmap.me_ic_scan);
+        getRight().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToActivity(mContext, CaptureActivity.class);
+            }
+        });
+        imageUtility.showImage(UserSingleton.getInstance().getSysUser().getHeadPic(), icon);
+        name.setText(UserSingleton.getInstance().getSysUser().getTruename());
+        getStatus();
     }
 
     public void toAnswer() {
 
-
+        if (UserSingleton.getInstance().getSysUser().getBookmanager() == 2) {
+            openDoor.setVisibility(View.VISIBLE);
+        }
         RequestParams params = new RequestParams(DemoHttpInformation.TOANSWER.getUrlPath() + "?zybhao=" + UserSingleton.getInstance().getSysUser().getMain() + "&fybhao=" + UserSingleton.getInstance().getSysUser().getPart() + "&classID=" + UserSingleton.getInstance().getSysUser().getBji());
 
         x.http().get(params, new Callback.CommonCallback<String>() {
@@ -144,7 +164,9 @@ public class MyFragment extends BaseFragment {
             case R.id.open_tv:
                 break;
             case R.id.add_book:
-                ToastUtil.showLongToast(mContext, "未看到二级页面");
+
+                switchannel();
+                //  ToastUtil.showLongToast(mContext, "未看到二级页面");
                 break;
             case R.id.open_door:
                 ToastUtil.showLongToast(mContext, "开箱管理");
@@ -152,5 +174,27 @@ public class MyFragment extends BaseFragment {
             case R.id.ly_main_weixin:
                 break;
         }
+    }
+
+    public void getStatus() {
+        MiceNetWorker Worker = new MiceNetWorker(mContext);
+        Worker.setOnTaskExecuteListener(new DemoNetTaskExecuteListener(mContext) {
+            @Override
+            public void onSuccess(SanmiNetWorker netWorker, SanmiNetTask netTask, BaseBean baseBean) {
+                super.onSuccess(netWorker, netTask, baseBean);
+            }
+        });
+        Worker.bookcaseStatus();
+    }
+
+    public void switchannel() {
+        MiceNetWorker Worker = new MiceNetWorker(mContext);
+        Worker.setOnTaskExecuteListener(new DemoNetTaskExecuteListener(mContext) {
+            @Override
+            public void onSuccess(SanmiNetWorker netWorker, SanmiNetTask netTask, BaseBean baseBean) {
+                super.onSuccess(netWorker, netTask, baseBean);
+            }
+        });
+        Worker.switchannel();
     }
 }

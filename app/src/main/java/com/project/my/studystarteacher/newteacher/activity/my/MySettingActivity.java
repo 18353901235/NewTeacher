@@ -99,7 +99,7 @@ public class MySettingActivity extends BaseActivity {
                 super.onSuccess(netWorker, netTask, baseBean);
                 info = JsonUtil.fromBean((String) baseBean.getData(), "Info", User.class);
                 UserSingleton.getInstance().setSysUser(info);
-                name.setText(info.getUsername());
+                name.setText(info.getTruename());
                 age.setText(info.getAge() + "");
                 if (isNull(info.getBrith())) {
                     birth.setText(TimeUtil.TransTime(Long.parseLong(info.getBrith()), "yyyy-MM-dd"));
@@ -140,7 +140,8 @@ public class MySettingActivity extends BaseActivity {
                         ToastUtil.showLongToast(mContext, "更改成功");
                     }
                 });
-                Worker.perfectInfo(loginClassBean.getBjid() + "", loginClassBean.getBji(), loginClassBean.getBean().getMainSchoolNo(), loginClassBean.getBean().getPartSchoolNo(), name.getText().toString().trim());
+                if (loginClassBean != null)
+                    Worker.perfectInfo(loginClassBean.getBjid() + "", loginClassBean.getBji(), loginClassBean.getBean().getMainSchoolNo(), loginClassBean.getBean().getPartSchoolNo(), name.getText().toString().trim());
                 break;
         }
     }

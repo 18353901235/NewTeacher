@@ -32,7 +32,7 @@
             android:layout_marginTop="25dp"
             android:background="@mipmap/bg_my" />
 
-        <ImageView
+        <com.project.my.studystarteacher.newteacher.view.CircleImageView
             android:id="@+id/icon"
             android:layout_width="80dp"
             android:layout_height="80dp"
@@ -317,6 +317,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/home_cic_white"
                 android:orientation="vertical">
@@ -325,9 +326,10 @@
                     android:id="@+id/open_door"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
-
                     android:gravity="center_vertical"
-                    android:orientation="horizontal">
+
+                    android:orientation="horizontal"
+                    android:visibility="gone">
 
                     <TextView
                         android:layout_width="wrap_content"

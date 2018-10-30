@@ -32,16 +32,20 @@ public enum DemoHttpInformation implements SanmiHttpInfomation {
     INTERACT(1, "live/interact", "互动列表", false),
     COUNT(1, "red/count", "红包 ", false),
     STATISTICS(1, "survey/statistics", " 调研统计", false),
-
+    TYPELIVE(1, "live/type", " 直播分类", false),
+    LISTLIVE(1, "live/list", " 直播列表", false),
 
     PUBLISH(1, "live/publish", "发表评论", false),
 
-
     TIMES(1, "live/times", "访问(4395)、播放(4396)次数增加", false),
     //-----------首页end-------------------------------
+
+
     //------------------有声绘本
     GETVOICEDBOOKLIST(1, "voicedBookCtrl/getVoicedBookList", "有声绘本列表", false),
     GETSEARCHCONDITIONSLIST(1, "voicedBookCtrl/getSearchConditionsList", "获取有声绘本的筛选条件", false),
+
+
     //------------------有声绘本
     //------------------借阅管理
     GETCLASSLIST(1, "bookBorrowReadCtrl/getClassList", "管理员获取班级列表", false),
@@ -49,7 +53,9 @@ public enum DemoHttpInformation implements SanmiHttpInfomation {
     GETBORROWBLACKLIST(1, "bookBorrowReadCtrl/getBorrowBlackList", "管理对象（黑名单）", false),
     REMOVEBLACKLIST(1, "bookBorrowReadCtrl/removeBlackList", "移除管理对象（黑名单）", false),
     GETSTUDENTBORROWLIST(1, "bookBorrowReadCtrl/getStudentBorrowList", "获取学生借阅详情", false),
-
+    GETRECOMMENDBOOKLIST(1, "bookBorrowReadCtrl/getRecommendBookList", "手工推荐", false),
+    MAKERECOMMENDEDBAGTOONESTUDENT(1, "bookBorrowReadCtrl/makeRecommendedBagToOneStudent", "推荐给学生", false),
+    GETNEWHISTORYRECOMMENDED(1, "bookBorrowReadCtrl/getNewHistoryRecommended", "推荐历史记", false),
 
     //---------------破损管理
     BOOKDAMAGEUPLOAD(1, "bookDamage/bookDamageUpload", "破损登记管理", false),
@@ -60,7 +66,8 @@ public enum DemoHttpInformation implements SanmiHttpInfomation {
     //------还书管理
     GETBACKRECORDS(1, "returnBook/getBackRecords", "还书记录列表", false),
     GIVEBACKBAGSLIST(1, "returnBook/giveBackBagsList", "批量还书列表", false),
-
+    GIVEBACKBAGS(1, "returnBook/giveBackBags", "批量还书", false),
+    GIVEBARCODEBACKBAGS(1, "returnBook/giveBarcodeBackBags", "扫码还书", false),
     //------------------有声绘本
 
     //-------------主播
@@ -74,6 +81,7 @@ public enum DemoHttpInformation implements SanmiHttpInfomation {
     TOANSWER(1, "http://app.xuezhixing.net:8080/xmanager/appAnswer/toAnswer.do", "调研分享", true),
     SHARED(1, "http://app.xuezhixing.net:8081/TearcherService/pay/shared", "调研分享", true),
     PERFECTINFO(1, "teacher/perfectInfo", "完善个人设置（不包含上传头像）", false),
+    PHONEBOOK(1, "mine/phoneBook", "通讯录", false),
 
 
     //------------------我的
@@ -82,8 +90,10 @@ public enum DemoHttpInformation implements SanmiHttpInfomation {
     DYNAMICFUNCTION(1, "dynamic/dynamicFunction", "动态的功能", false),
     DYNAMICUPLOAD(1, "dynamic/dynamicUpload", "动态上传", false),
 
+    STATUSBOOKCASE(1, "mine/bookcase/status", "获取通道状态", false),
+    SWITCHANNEL(1, "mine/switchannel", "获取通道状态", false),
 
-    //--------------------
+        //--------------------
 
 
     SELECTINFOBYPIC(64, "goods/selectInfoByPic.do", "通过图片特征码获取详情信息", false),;

@@ -40,7 +40,9 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-
+        debug {
+            signingConfig signingConfigs.config
+        }
     }
     //添加如下配置就ok了
     lintOptions {
@@ -91,6 +93,4 @@ dependencies {
     implementation 'com.zhy:mpermission-compiler:1.0.0'
     annotationProcessor 'com.zhy:mpermission-compiler:1.0.0'
     implementation 'com.zhy:mpermission-api:1.0.0'
-
-
 }

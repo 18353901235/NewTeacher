@@ -21,6 +21,7 @@ import com.project.my.studystarteacher.newteacher.activity.home.LoveDetailsActiv
 import com.project.my.studystarteacher.newteacher.activity.home.ReadActviActivity;
 import com.project.my.studystarteacher.newteacher.activity.home.VideoDetailsActivity;
 import com.project.my.studystarteacher.newteacher.activity.home.YduActiviActivity;
+import com.project.my.studystarteacher.newteacher.activity.home.YueDuBangActivity;
 import com.project.my.studystarteacher.newteacher.activity.home.ZhuboActivity;
 import com.project.my.studystarteacher.newteacher.activity.my.LoveBossActivity;
 import com.project.my.studystarteacher.newteacher.adapter.HomeClassAdapter;
@@ -32,12 +33,17 @@ import com.project.my.studystarteacher.newteacher.bean.BannerBean;
 import com.project.my.studystarteacher.newteacher.bean.ExpertLecture;
 import com.project.my.studystarteacher.newteacher.bean.RankingBean;
 import com.project.my.studystarteacher.newteacher.bean.ReadDynamics;
+import com.project.my.studystarteacher.newteacher.bean.RedCard;
+import com.project.my.studystarteacher.newteacher.bean.YaoSign;
 import com.project.my.studystarteacher.newteacher.bean.ZhuBoBean;
 import com.project.my.studystarteacher.newteacher.common.CommonWebViewActivity;
 import com.project.my.studystarteacher.newteacher.common.ProjectConstant;
 import com.project.my.studystarteacher.newteacher.common.TempSourceSupply;
+import com.project.my.studystarteacher.newteacher.common.UserSingleton;
 import com.project.my.studystarteacher.newteacher.net.DemoNetTaskExecuteListener;
 import com.project.my.studystarteacher.newteacher.net.MiceNetWorker;
+import com.project.my.studystarteacher.newteacher.utils.EventBusUtil;
+import com.project.my.studystarteacher.newteacher.utils.EventWhatId;
 import com.project.my.studystarteacher.newteacher.utils.ImageUtility;
 import com.project.my.studystarteacher.newteacher.view.AdvertHorizontalUtil;
 import com.project.my.studystarteacher.newteacher.view.CircleImageView;
@@ -46,6 +52,7 @@ import com.zhouqiang.framework.net.SanmiNetTask;
 import com.zhouqiang.framework.net.SanmiNetWorker;
 import com.zhouqiang.framework.util.JsonUtil;
 
+import org.greenrobot.eventbus.EventBus;
 import org.xutils.common.util.DensityUtil;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
@@ -82,10 +89,16 @@ public class HomeFragment extends BaseFragment {
     private CircleImageView oneIcon;
     @ViewInject(R.id.one_name)
     private TextView oneName;
+    @ViewInject(R.id.red)
+    private TextView red;
+    @ViewInject(R.id.yqNum)
+    private TextView yqNum;
     @ViewInject(R.id.three_icon)
     private CircleImageView threeIcon;
     @ViewInject(R.id.three_name)
     private TextView threeName;
+    @ViewInject(R.id.my_adress)
+    private TextView my_adress;
     @ViewInject(R.id.vp_home)
     private ViewPager vpHome;
     @ViewInject(R.id.ll_point)
@@ -124,7 +137,7 @@ public class HomeFragment extends BaseFragment {
                 ToActivity(mContext, VideoDetailsActivity.class, bean.getId());
             }
         });
-
+        my_adress.setText(UserSingleton.getInstance().getSysUser().getFymcheng());
         zhubo_gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -171,7 +184,7 @@ public class HomeFragment extends BaseFragment {
         findViewById(R.id.more_video).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ToActivity(mContext, HomeZhuboActivity.class);
+                EventBus.getDefault().post(new EventBusUtil(EventWhatId.TOVIDEO));
             }
         });
         findViewById(R.id.more_zhubo).setOnClickListener(new View.OnClickListener() {
@@ -180,11 +193,44 @@ public class HomeFragment extends BaseFragment {
                 ToActivity(mContext, HomeZhuboActivity.class);
             }
         });
+        findViewById(R.id.more_ranking).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ToActivity(mContext, YueDuBangActivity.class);
+            }
+        });
         getData();
-
+        getYNum();
+        getYy();
     }
 
     ArrayList<BannerBean> banner;
+
+    public void getYNum() {
+        MiceNetWorker Worker = new MiceNetWorker(mContext);
+        Worker.setOnTaskExecuteListener(new DemoNetTaskExecuteListener(mContext) {
+            @Override
+            public void onSuccess(SanmiNetWorker netWorker, SanmiNetTask netTask, BaseBean baseBean) {
+                super.onSuccess(netWorker, netTask, baseBean);
+                ArrayList<YaoSign> yaoSigns = JsonUtil.fromList((String) baseBean.getData(), "detail", YaoSign.class);
+                yqNum.setText(yaoSigns.size() + "");
+            }
+        });
+        Worker.statistics();
+    }
+
+    public void getYy() {
+        MiceNetWorker Worker = new MiceNetWorker(mContext);
+        Worker.setOnTaskExecuteListener(new DemoNetTaskExecuteListener(mContext) {
+            @Override
+            public void onSuccess(SanmiNetWorker netWorker, SanmiNetTask netTask, BaseBean baseBean) {
+                super.onSuccess(netWorker, netTask, baseBean);
+                ArrayList<RedCard> detail = JsonUtil.fromList((String) baseBean.getData(), "detail", RedCard.class);
+                red.setText(detail.size() + "");
+            }
+        });
+        Worker.count();
+    }
 
     private void getData() {
         getActivityRanking();
