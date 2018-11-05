@@ -1,5 +1,6 @@
 package com.project.my.studystarteacher.newteacher.activity.my;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -7,9 +8,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.project.my.studystarteacher.newteacher.R;
+import com.project.my.studystarteacher.newteacher.album.PicturePickActivity;
 import com.project.my.studystarteacher.newteacher.base.BaseActivity;
 import com.project.my.studystarteacher.newteacher.bean.LoginClassBean;
 import com.project.my.studystarteacher.newteacher.bean.User;
+import com.project.my.studystarteacher.newteacher.common.ProjectConstant;
 import com.project.my.studystarteacher.newteacher.common.UserSingleton;
 import com.project.my.studystarteacher.newteacher.login.LoginActivity;
 import com.project.my.studystarteacher.newteacher.login.SelectClassActivity;
@@ -17,6 +20,7 @@ import com.project.my.studystarteacher.newteacher.net.DemoNetTaskExecuteListener
 import com.project.my.studystarteacher.newteacher.net.MiceNetWorker;
 import com.project.my.studystarteacher.newteacher.utils.EventBusUtil;
 import com.project.my.studystarteacher.newteacher.utils.EventWhatId;
+import com.project.my.studystarteacher.newteacher.utils.ImageUtility;
 import com.project.my.studystarteacher.newteacher.view.CircleImageView;
 import com.zhouqiang.framework.BaseActivityManager;
 import com.zhouqiang.framework.bean.BaseBean;
@@ -32,6 +36,8 @@ import org.greenrobot.eventbus.ThreadMode;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
+
+import java.util.ArrayList;
 
 @ContentView(R.layout.activity_my_setting)
 public class MySettingActivity extends BaseActivity {
@@ -71,6 +77,19 @@ public class MySettingActivity extends BaseActivity {
                 ToActivity(mContext, SelectClassActivity.class);
             }
         });
+        findViewById(R.id.icon_ll).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                takePicture();
+            }
+        });
+    }
+
+    // 拍照
+    public void takePicture() {
+        Intent intent = new Intent(mContext, PicturePickActivity.class);
+        intent.putExtra("pictureNum", 1);
+        startActivityForResult(intent, ProjectConstant.SEL_PHOTO_REQUESTCODE);
     }
 
     LoginClassBean loginClassBean;
@@ -106,11 +125,35 @@ public class MySettingActivity extends BaseActivity {
                 }
                 bj.setText(info.getFymcheng());
                 xb.setText(info.getSex());
-
-
+                UserSingleton.getInstance().getSysUser().setHeadPic(info.getHeadPic());
+                new ImageUtility(R.mipmap.img_headportrait).showImage(UserSingleton.getInstance().getSysUser().getHeadPic(), icon);
             }
         });
         Worker.getInfo();
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == ProjectConstant.SEL_PHOTO_REQUESTCODE) {
+            if (data != null && data.getStringArrayListExtra("choicePicture") != null) {
+                ArrayList<String> selImage = data.getStringArrayListExtra("choicePicture");
+                if (selImage != null && selImage.size() > 0) {
+
+                    MiceNetWorker Worker = new MiceNetWorker(mContext);
+                    Worker.setOnTaskExecuteListener(new DemoNetTaskExecuteListener(mContext) {
+                        @Override
+                        public void onSuccess(SanmiNetWorker netWorker, SanmiNetTask netTask, BaseBean baseBean) {
+                            super.onSuccess(netWorker, netTask, baseBean);
+                            ToastUtil.showLongToast(mContext, "上传成功");
+                            getData();
+                            EventBus.getDefault().post(new EventBusUtil(EventWhatId.REFRSH));
+
+                        }
+                    });
+                    Worker.uploadHeadImg(selImage.get(0));
+                }
+            }
+        }
     }
 
     @Event({R.id.icon, R.id.clear, R.id.logout, R.id.submit})

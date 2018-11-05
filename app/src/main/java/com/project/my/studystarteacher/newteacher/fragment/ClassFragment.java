@@ -19,7 +19,7 @@ public class ClassFragment extends BaseFragment {
     public void init() {
         getCommonTitle().setText("育儿直播");
         getLeft().setVisibility(View.GONE);
-        getRight().setBackgroundResource(R.mipmap.musicbk_ic_search);
+     //   getRight().setBackgroundResource(R.mipmap.musicbk_ic_search);
         //typeLive
         getData();
     }

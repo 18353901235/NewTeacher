@@ -19,4 +19,5 @@ public class EventWhatId {
     public static int C = 15;
     public static int SUBMITREPAY = 16;
     public static int REPAYSCAN = 17;
+    public static int BEAN = 18;
 }

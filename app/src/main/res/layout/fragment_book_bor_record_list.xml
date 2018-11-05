@@ -19,10 +19,11 @@
             android:text="全选" />
 
         <ImageView
+            android:id="@+id/all"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_marginRight="16dp"
-            android:background="@mipmap/check_btn" />
+            android:background="@mipmap/checkbtn_select" />
     </LinearLayout>
 
     <com.handmark.pulltorefresh.library.PullToRefreshListView

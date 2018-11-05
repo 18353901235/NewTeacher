@@ -34,8 +34,15 @@ public class RecommendAdapter extends CommonAdapter<HandlerTJ.BagsBean> {
     protected void convert(ViewHolder viewHolder, final HandlerTJ.BagsBean item, int position) {
         GridView gridView = viewHolder.getView(R.id.gv);
         viewHolder.setText(R.id.bagNum, item.getSchoolbagbhao());
-        BooksAdapter demoAdapter = new BooksAdapter(mContext, R.layout.item_recomend_list, item.getBookList());
-        gridView.setAdapter(demoAdapter);
+        if (item.getAdapter() != null) {
+            gridView.setAdapter(item.getAdapter());
+        } else {
+            BooksAdapter demoAdapter = new BooksAdapter(mContext, R.layout.item_recomend_list, item.getBookList());
+            item.setAdapter(demoAdapter);
+            gridView.setAdapter(demoAdapter);
+        }
+
+
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long posion) {

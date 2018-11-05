@@ -320,6 +320,6 @@
         <activity android:name=".activity.home.PublicCommentActivity" />
         <activity android:name=".activity.home.YueDuBangActivity"></activity>
         <activity android:name="com.project.my.studystarteacher.newteacher.activity.home.CaptureActivity"></activity>
-
+        <activity android:name="com.project.my.studystarteacher.newteacher.activity.home.OpenMangerActivity" />
     </application>
 </manifest>

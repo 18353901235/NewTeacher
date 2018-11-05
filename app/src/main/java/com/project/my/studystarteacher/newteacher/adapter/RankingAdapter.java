@@ -20,7 +20,7 @@ public class RankingAdapter extends CommonAdapter<RankingBean> {
 
     public RankingAdapter(Context context, int layoutId, ArrayList<RankingBean> datas) {
         super(context, layoutId, datas);
-        imageUtility = new ImageUtility(R.mipmap.moren);
+        imageUtility = new ImageUtility(R.mipmap.img_headportrait);
     }
 
     @Override

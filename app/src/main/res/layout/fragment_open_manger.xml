@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ly_main_weixin"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/linef8"
+    android:orientation="vertical">
+
+    <include layout="@layout/title_bar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/liuhai" />
+
+        <RadioGroup
+            android:id="@+id/rg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/home_cic_graybtnall"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/one"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/gray_white_selector"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="箱子管理"
+                android:textColor="@color/video_color_selector"
+                android:textSize="@dimen/title_size"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/two"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/gray_white_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="最近取书"
+                android:textColor="@color/video_color_selector"
+                android:textSize="@dimen/title_size"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/three"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/gray_white_selector"
+                android:button="@null"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="预留"
+                android:textColor="@color/video_color_selector"
+                android:textSize="@dimen/title_size"
+                android:textStyle="bold" />
+        </RadioGroup>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/rg"
+            android:layout_marginTop="10dp"></android.support.v4.view.ViewPager>
+
+    </RelativeLayout>
+
+
+</LinearLayout>

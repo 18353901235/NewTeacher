@@ -3,14 +3,14 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    signingConfigs {
-        config {
-            keyAlias 'zhongke'
-            keyPassword '123456a?'
-            storeFile file('E:/apk_key/new_teacher.jks')
-            storePassword '123456a?'
-        }
-    }
+//    signingConfigs {
+//        config {
+//            keyAlias 'zhongke'
+//            keyPassword '123456a?'
+//            storeFile file('E:/apk_key/new_teacher.jks')
+//            storePassword '123456a?'
+//        }
+//    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.project.my.studystarteacher.newteacher"
@@ -29,7 +29,7 @@ android {
                 JPUSH_APPKEY : "ad7b0bbf07639831b1eaf7ca", //JPush 上注册的包名对应的 Appkey.
                 JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
         ]
-        signingConfig signingConfigs.config
+//        signingConfig signingConfigs.config
         multiDexEnabled true
     }
     dexOptions {
@@ -41,7 +41,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
-            signingConfig signingConfigs.config
+//            signingConfig signingConfigs.config
         }
     }
     //添加如下配置就ok了
@@ -84,12 +84,12 @@ dependencies {
     implementation('jp.wasabeef:glide-transformations:2.0.1') {
         exclude module: 'glide'
     }
-    compile 'top.zibin:Luban:1.0.9'
-    compile 'com.jakewharton:butterknife:8.4.0'
+    implementation 'top.zibin:Luban:1.0.9'
+    implementation 'com.jakewharton:butterknife:8.4.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation project(':mediapicker')
-    compile 'io.reactivex:rxandroid:1.2.1'
-    compile 'io.reactivex:rxjava:1.1.6'
+    implementation 'io.reactivex:rxandroid:1.2.1'
+    implementation 'io.reactivex:rxjava:1.1.6'
     implementation 'com.zhy:mpermission-compiler:1.0.0'
     annotationProcessor 'com.zhy:mpermission-compiler:1.0.0'
     implementation 'com.zhy:mpermission-api:1.0.0'

@@ -28,7 +28,7 @@ public class HomeZhuboActivity extends BaseActivity {
     @Override
     protected void init() {
         getCommonTitle().setText("人气主播");
-        getRight().setBackgroundResource(R.mipmap.musicbk_ic_search);
+     //   getRight().setBackgroundResource(R.mipmap.musicbk_ic_search);
         //   HomeZhuboAdapter homeClassAdapter3 = new HomeZhuboAdapter(mContext, R.layout.item_audio_list, TempSourceSupply.getMyData());
         final View inflate = View.inflate(mContext, R.layout.pop_fifter_audio, null);
 //        AllGridView gridView = inflate.findViewById(R.id.gridview);

@@ -1,5 +1,6 @@
 package com.project.my.studystarteacher.newteacher.activity.home;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v4.view.ViewPager;
 import android.view.MotionEvent;
@@ -18,6 +19,7 @@ import com.project.my.studystarteacher.newteacher.fragment.HudongFragment;
 import com.project.my.studystarteacher.newteacher.fragment.VideoJsFragment;
 import com.project.my.studystarteacher.newteacher.net.DemoNetTaskExecuteListener;
 import com.project.my.studystarteacher.newteacher.net.MiceNetWorker;
+import com.project.my.studystarteacher.newteacher.share.ShareActivity;
 import com.project.my.studystarteacher.newteacher.utils.EventBusUtil;
 import com.project.my.studystarteacher.newteacher.utils.EventWhatId;
 import com.project.my.studystarteacher.newteacher.utils.ImageUtility;
@@ -63,6 +65,7 @@ public class VideoDetailsActivity extends BaseActivity {
     @Override
     protected void init() {
         getRight().setBackgroundResource(R.mipmap.btn_share);
+
         id = getIntent().getIntExtra("data", -1);
         getData();
         getHDData();
@@ -192,13 +195,24 @@ public class VideoDetailsActivity extends BaseActivity {
             @Override
             public void onSuccess(SanmiNetWorker netWorker, SanmiNetTask netTask, BaseBean baseBean) {
                 super.onSuccess(netWorker, netTask, baseBean);
-                ArrayList<ExpertLecture> relevantVideo = JsonUtil.fromList((String) baseBean.getData(), "relevantVideo", ExpertLecture.class);
+                final ArrayList<ExpertLecture> relevantVideo = JsonUtil.fromList((String) baseBean.getData(), "relevantVideo", ExpertLecture.class);
                 getCommonTitle().setText(relevantVideo.get(0).getTitle());
                 payer.setUp(relevantVideo.get(0).getVideo_Url()
                         , "", Jzvd.SCREEN_WINDOW_NORMAL);
                 new ImageUtility(R.mipmap.moren3).showImage(relevantVideo.get(0).getCover(), payer.thumbImageView);
                 visited_Count.setText(relevantVideo.get(0).getVisited_Count() + "");
                 EventBus.getDefault().post(new EventBusUtil(EventWhatId.ExpertLectureDetais, relevantVideo.get(0)));
+                getRight().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(mContext, ShareActivity.class);
+                        intent.putExtra("url", relevantVideo.get(0).getVideo_Url());
+                        intent.putExtra("title", relevantVideo.get(0).getTopic());
+                        intent.putExtra("image", relevantVideo.get(0).getCover());
+                        intent.putExtra("content", relevantVideo.get(0).getDescription());
+                        mContext.startActivity(intent);
+                    }
+                });
                 ;
             }
         });

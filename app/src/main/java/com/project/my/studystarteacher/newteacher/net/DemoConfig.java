@@ -16,6 +16,6 @@ public class DemoConfig {
     //远程
     //public static final String SYS_ROOT = "http://120.24.168.227:8080/consumer/";
     //正式
-    //  public static final String SYS_ROOT = "http://47.105.74.69:8081/TheacherService/";
+   // public static final String SYS_ROOT = "http://47.105.74.69:8081/TheacherService/";
     public static final String SYS_ROOT = "http://www.xuezhixing.net:8087/TheacherService/";
 }

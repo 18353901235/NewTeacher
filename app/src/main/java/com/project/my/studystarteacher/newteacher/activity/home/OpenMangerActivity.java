@@ -1,7 +1,6 @@
-package com.project.my.studystarteacher.newteacher.fragment.brobook;
+package com.project.my.studystarteacher.newteacher.activity.home;
 
 
-import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.widget.RadioGroup;
@@ -10,21 +9,20 @@ import com.project.my.studystarteacher.newteacher.R;
 import com.project.my.studystarteacher.newteacher.adapter.BaseVPFAdapter;
 import com.project.my.studystarteacher.newteacher.base.BaseFragment;
 import com.project.my.studystarteacher.newteacher.base.BaseFragmentActivity;
-import com.project.my.studystarteacher.newteacher.utils.EventBusUtil;
-import com.project.my.studystarteacher.newteacher.utils.EventWhatId;
+import com.project.my.studystarteacher.newteacher.fragment.BagListMangerFragment;
+import com.project.my.studystarteacher.newteacher.fragment.brobook.BookBorRecordFragment;
 
-import org.greenrobot.eventbus.EventBus;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 
 import java.util.ArrayList;
 
 //BorNomalMangFragment
-@ContentView(R.layout.fragment_brobookmanger)
-public class BorMangerActivity extends BaseFragmentActivity {
+@ContentView(R.layout.fragment_open_manger)
+public class OpenMangerActivity extends BaseFragmentActivity {
     @ViewInject(R.id.rg)
     private RadioGroup group;
-    private BookBorNomalMangerFragment test1 = new BookBorNomalMangerFragment();
+    private BagListMangerFragment test1 = new BagListMangerFragment();
     private BookBorRecordFragment test2 = new BookBorRecordFragment();
     /**
      * 加载所有fragment
@@ -34,16 +32,7 @@ public class BorMangerActivity extends BaseFragmentActivity {
 
     @Override
     public void init() {
-        getCommonTitle().setText("借阅管理");
-        final int data = getIntent().getIntExtra("data", -1);
-        if (data != -1) {
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    EventBus.getDefault().post(new EventBusUtil(EventWhatId.CLASSID, data));
-                }
-            }, 500);
-        }
+        getCommonTitle().setText("开箱管理");
         ArrayList<BaseFragment> frg = new ArrayList<BaseFragment>();
         frg.add(test1);
         frg.add(test2);
@@ -57,7 +46,7 @@ public class BorMangerActivity extends BaseFragmentActivity {
                     getRight().setBackground(null);
                 } else if (checkedId == R.id.two) {
                     linAllFragment.setCurrentItem(1);
-                 //   getRight().setBackgroundResource(R.mipmap.musicbk_ic_search);
+                    //  getRight().setBackgroundResource(R.mipmap.musicbk_ic_search);
                 } else if (checkedId == R.id.three) {
                     getRight().setBackground(null);
                     linAllFragment.setCurrentItem(2);

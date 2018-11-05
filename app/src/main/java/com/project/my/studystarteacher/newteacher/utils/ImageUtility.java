@@ -9,10 +9,12 @@ import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
 import org.xutils.common.util.DensityUtil;
 
+import java.io.Serializable;
+
 /**
  * Created by ZhouQiang on 2016/2/4.
  */
-public class ImageUtility {
+public class ImageUtility implements Serializable {
     /**
      * ImageLoader
      */

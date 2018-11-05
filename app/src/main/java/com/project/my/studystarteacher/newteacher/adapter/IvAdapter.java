@@ -8,6 +8,7 @@ import com.project.my.studystarteacher.newteacher.utils.ImageUtility;
 import com.zhy.adapter.abslistview.CommonAdapter;
 import com.zhy.adapter.abslistview.ViewHolder;
 
+import java.io.Serializable;
 import java.util.List;
 
 
@@ -15,7 +16,7 @@ import java.util.List;
  * Created by hasee on 2018/5/9.
  */
 
-public class IvAdapter extends CommonAdapter<String> {
+public class IvAdapter extends CommonAdapter<String> implements Serializable {
     ImageUtility imageUtility;
 
     public IvAdapter(Context context, int layoutId, List<String> datas) {

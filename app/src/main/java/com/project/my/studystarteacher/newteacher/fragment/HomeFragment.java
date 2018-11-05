@@ -40,6 +40,7 @@ import com.project.my.studystarteacher.newteacher.common.CommonWebViewActivity;
 import com.project.my.studystarteacher.newteacher.common.ProjectConstant;
 import com.project.my.studystarteacher.newteacher.common.TempSourceSupply;
 import com.project.my.studystarteacher.newteacher.common.UserSingleton;
+import com.project.my.studystarteacher.newteacher.net.DemoHttpInformation;
 import com.project.my.studystarteacher.newteacher.net.DemoNetTaskExecuteListener;
 import com.project.my.studystarteacher.newteacher.net.MiceNetWorker;
 import com.project.my.studystarteacher.newteacher.utils.EventBusUtil;
@@ -53,9 +54,12 @@ import com.zhouqiang.framework.net.SanmiNetWorker;
 import com.zhouqiang.framework.util.JsonUtil;
 
 import org.greenrobot.eventbus.EventBus;
+import org.xutils.common.Callback;
 import org.xutils.common.util.DensityUtil;
+import org.xutils.http.RequestParams;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
+import org.xutils.x;
 
 import java.util.ArrayList;
 
@@ -123,7 +127,7 @@ public class HomeFragment extends BaseFragment {
     @Override
     public void init() {
         BannerAdModel(null);
-        imageUtility = new ImageUtility(R.mipmap.moren);
+        imageUtility = new ImageUtility(R.mipmap.img_headportrait);
         RelativeLayout.LayoutParams mp = (RelativeLayout.LayoutParams) rv_point.getLayoutParams();
         mp.setMargins(0, 0, 0, DensityUtil.dip2px(35));//分别是margin_top那四个属性
         rv_point.setLayoutParams(mp);
@@ -201,22 +205,40 @@ public class HomeFragment extends BaseFragment {
         });
         getData();
         getYNum();
-        getYy();
+      getYy();
     }
 
     ArrayList<BannerBean> banner;
 
     public void getYNum() {
-        MiceNetWorker Worker = new MiceNetWorker(mContext);
-        Worker.setOnTaskExecuteListener(new DemoNetTaskExecuteListener(mContext) {
+        //DemoHttpInformation.GETSCORELIST
+        RequestParams requestParams = new RequestParams(DemoHttpInformation.GETSCORELIST.getUrlPath() + "?classId=" + UserSingleton.getInstance().getSysUser().getBji());
+        x.http().get(requestParams, new Callback.CommonCallback<String>() {
             @Override
-            public void onSuccess(SanmiNetWorker netWorker, SanmiNetTask netTask, BaseBean baseBean) {
-                super.onSuccess(netWorker, netTask, baseBean);
-                ArrayList<YaoSign> yaoSigns = JsonUtil.fromList((String) baseBean.getData(), "detail", YaoSign.class);
-                yqNum.setText(yaoSigns.size() + "");
+            public void onSuccess(String result) {
+                try {
+                    ArrayList<YaoSign> yaoSigns = JsonUtil.fromList(result, YaoSign.class);
+                    yqNum.setText(yaoSigns.size() + "");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+
+            }
+
+            @Override
+            public void onCancelled(CancelledException cex) {
+
+            }
+
+            @Override
+            public void onFinished() {
+
             }
         });
-        Worker.statistics();
     }
 
     public void getYy() {

@@ -32,6 +32,9 @@ public enum DemoHttpInformation implements SanmiHttpInfomation {
     INTERACT(1, "live/interact", "互动列表", false),
     COUNT(1, "red/count", "红包 ", false),
     STATISTICS(1, "survey/statistics", " 调研统计", false),
+    GETSCORELIST(1, "http://app.xuezhixing.net:8080/xmanager/appAnswer/getScoreList.do", " 调研统计", true),
+
+
     TYPELIVE(1, "live/type", " 直播分类", false),
     LISTLIVE(1, "live/list", " 直播列表", false),
 
@@ -92,8 +95,11 @@ public enum DemoHttpInformation implements SanmiHttpInfomation {
 
     STATUSBOOKCASE(1, "mine/bookcase/status", "获取通道状态", false),
     SWITCHANNEL(1, "mine/switchannel", "获取通道状态", false),
-
-        //--------------------
+    BOXLIST(1, "mine/boxList", "箱子列表", false),
+    UNBOX(1, "mine/unbox", "开箱", false),
+    SHIELD(1, "mine/shield ", "屏蔽", false),
+    UPLOADHEADIMG(1, "teacher/uploadHeadImg", "头像上传", false),
+    //--------------------
 
 
     SELECTINFOBYPIC(64, "goods/selectInfoByPic.do", "通过图片特征码获取详情信息", false),;

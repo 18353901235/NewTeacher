@@ -18,6 +18,7 @@ import com.project.my.studystarteacher.newteacher.base.BaseActivity;
 import com.project.my.studystarteacher.newteacher.bean.ZhuBoBean;
 import com.project.my.studystarteacher.newteacher.common.Constant;
 import com.project.my.studystarteacher.newteacher.service.MyService;
+import com.project.my.studystarteacher.newteacher.share.ShareActivity;
 import com.project.my.studystarteacher.newteacher.utils.ImageUtility;
 import com.zhouqiang.framework.util.ToastUtil;
 
@@ -177,13 +178,24 @@ public class AudioPayerActivity extends BaseActivity {
         Glide.with(this).load(data.get(positon).getHeadImg()).bitmapTransform(new BlurTransformation(mContext, 25)).into(bac_blur);
     }
 
-    private void setData(ArrayList<ZhuBoBean> data) {
+    private void setData(final ArrayList<ZhuBoBean> data) {
         imageUtility.showImage(data.get(positon).getHeadImg(), img);
         imageUtility.showImage(data.get(positon).getHeadImg(), bac_blur);
         msg.setText(data.get(positon).getBookdesc());
 
         cd_name.setText(data.get(positon).getBookname());
         desc.setText(data.get(positon).getAuthor());
+        getRight().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, ShareActivity.class);
+                intent.putExtra("url", data.get(positon).getUrl());
+                intent.putExtra("title", data.get(positon).getBookname());
+                intent.putExtra("image", data.get(positon).getHeadImg());
+                intent.putExtra("content", data.get(positon).getBookdesc());
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override

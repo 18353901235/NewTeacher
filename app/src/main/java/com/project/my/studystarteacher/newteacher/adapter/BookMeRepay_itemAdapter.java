@@ -44,16 +44,12 @@ public class BookMeRepay_itemAdapter extends CommonAdapter<MeRepayBook> {
         }
         final ImageView imageView = viewHolder.getView(R.id.check_iv);
         final ImageView all = viewHolder.getView(R.id.ivAll);
-
+        all.setBackgroundResource(R.mipmap.checkbtn_select);
         for (String s : checkList) {
             if (item.getReadTime().equals(s)) {
                 all.setBackgroundResource(R.mipmap.check_btn);
-                break;
-            } else {
-                all.setBackgroundResource(R.mipmap.checkbtn_select);
             }
         }
-
         if (item.isCheck()) {
             imageView.setBackgroundResource(R.mipmap.check_btn);
         } else {
@@ -62,17 +58,21 @@ public class BookMeRepay_itemAdapter extends CommonAdapter<MeRepayBook> {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                item.setCheck(!item.isCheck());
                 EventBus.getDefault().post(new EventBusUtil(EventWhatId.MEREPAY, item));
-
             }
         });
         all.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (all.getBackground().getCurrent().equals(context.getResources().getDrawable(R.mipmap.check_btn))) {
+                if (all.getTag().equals("1")) {
+
+                    all.setTag("0");
+                    checkList.remove(item.getReadTime());
                     EventBus.getDefault().post(new EventBusUtil(EventWhatId.MEREPAYUNCHECKED, item));
                 } else {
+                    all.setTag("1");
+                    checkList.add(item.getReadTime());
                     EventBus.getDefault().post(new EventBusUtil(EventWhatId.MEREPAYCHECKED, item));
                 }
             }

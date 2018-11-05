@@ -12,6 +12,7 @@ import com.project.my.studystarteacher.newteacher.adapter.ZhuboBookAdapter;
 import com.project.my.studystarteacher.newteacher.base.BaseActivity;
 import com.project.my.studystarteacher.newteacher.bean.AudioBook;
 import com.project.my.studystarteacher.newteacher.bean.AudioRecodeBean;
+import com.project.my.studystarteacher.newteacher.bean.ZhuBoBean;
 import com.project.my.studystarteacher.newteacher.net.DemoNetTaskExecuteListener;
 import com.project.my.studystarteacher.newteacher.net.MiceNetWorker;
 import com.project.my.studystarteacher.newteacher.utils.EventBusUtil;
@@ -74,6 +75,17 @@ public class ZhuboActivity extends BaseActivity {
                             if (au == null) {
                                 return;
                             }
+                            ArrayList<ZhuBoBean> zhuBoBeans = new ArrayList<>();
+                            ZhuBoBean zhuBoBean = new ZhuBoBean();
+                            zhuBoBean.setId(au.getId());
+                            zhuBoBean.setAuthor(au.getBookname());
+                            zhuBoBean.setBookdesc(au.getBookdesc());
+                            zhuBoBean.setUrl(au.getUrl());
+                            zhuBoBean.setBookname(au.getBookname());
+                            zhuBoBean.setPlay_Count(au.getPlay_Count());
+                            zhuBoBean.setHeadImg("drawable://"+R.mipmap.ic_launcher);
+                            zhuBoBeans.add(zhuBoBean);
+                            ToActivity(mContext, AudioPayerActivity.class, zhuBoBeans, 0);
                             //   ToActivity(mContext, RecodActivity.class, au);
                         }
                     }

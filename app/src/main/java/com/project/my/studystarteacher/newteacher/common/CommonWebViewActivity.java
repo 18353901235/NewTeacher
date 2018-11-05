@@ -104,7 +104,7 @@ public class CommonWebViewActivity extends BaseActivity {
         @Override
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
-            imgReset();
+//            imgReset();
         }
 
         @Override
@@ -132,7 +132,8 @@ public class CommonWebViewActivity extends BaseActivity {
     // 覆盖Activity类的onKeyDown(int keyCoder,KeyEvent event)方法
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if ((keyCode == KeyEvent.KEYCODE_BACK) && wvPage.canGoBack()) {
-            wvPage.goBack(); // goBack()表示返回WebView的上一页面
+//            wvPage.goBack(); // goBack()表示返回WebView的上一页面
+            finish();
             return true;
         }
         return super.onKeyDown(keyCode, event);

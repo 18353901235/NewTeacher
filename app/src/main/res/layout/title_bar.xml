@@ -79,7 +79,7 @@
             android:layout_marginRight="8dp"
             android:gravity="center"
             android:padding="8dp"
-            android:text="保存"
+            android:text=""
             android:textColor="@color/black_deep"
             android:visibility="invisible" />
     </RelativeLayout>

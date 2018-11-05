@@ -48,7 +48,7 @@ public class WornMangFragment extends BaseFragment {
                     getRight().setBackground(null);
                 } else if (checkedId == R.id.two) {
                     linAllFragment.setCurrentItem(1);
-                    getRight().setBackgroundResource(R.mipmap.musicbk_ic_search);
+             //       getRight().setBackgroundResource(R.mipmap.musicbk_ic_search);
                 } else if (checkedId == R.id.three) {
                     getRight().setBackground(null);
                     linAllFragment.setCurrentItem(2);

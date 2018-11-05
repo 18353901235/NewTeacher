@@ -1,5 +1,7 @@
 package com.project.my.studystarteacher.newteacher.bean;
 
+import com.project.my.studystarteacher.newteacher.adapter.BooksAdapter;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -59,6 +61,15 @@ public class HandlerTJ implements Serializable {
         private String schoolbagbhao;
         private String schoolbagname;
         private List<BookListBean> bookList;
+        private BooksAdapter adapter;
+
+        public BooksAdapter getAdapter() {
+            return adapter;
+        }
+
+        public void setAdapter(BooksAdapter adapter) {
+            this.adapter = adapter;
+        }
 
         public String getSchoolbagbhao() {
             return schoolbagbhao;

@@ -24,6 +24,7 @@
             android:id="@+id/ivAll"
             android:layout_width="20dp"
             android:layout_height="20dp"
+            android:tag="0"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="16dp"
             android:background="@mipmap/checkbtn_select" />

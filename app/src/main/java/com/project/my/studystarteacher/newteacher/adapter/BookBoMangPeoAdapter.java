@@ -87,7 +87,7 @@ public class BookBoMangPeoAdapter extends CommonAdapter<MangOBJ> {
             @Override
             public void onClick(View v) {
                 // bookBorrowReadCtrl/removeBlackList
-                update(item.getID() + "", position);
+                update(item.getXs_id() + "", position);
             }
         });
     }

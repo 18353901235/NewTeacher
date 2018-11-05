@@ -6,7 +6,6 @@ import android.widget.EditText;
 
 import com.project.my.studystarteacher.newteacher.R;
 import com.project.my.studystarteacher.newteacher.base.BaseActivity;
-import com.project.my.studystarteacher.newteacher.bean.DyNamicBean;
 import com.project.my.studystarteacher.newteacher.net.DemoNetTaskExecuteListener;
 import com.project.my.studystarteacher.newteacher.net.MiceNetWorker;
 import com.project.my.studystarteacher.newteacher.utils.EventBusUtil;
@@ -29,7 +28,7 @@ public class PublicCommentActivity extends BaseActivity {
     protected void init() {
         getCommonTitle().setText("发布评论");
         getRightTextView().setText("提交");
-        final DyNamicBean item = (DyNamicBean) getIntent().getSerializableExtra("data");
+        final String id = getIntent().getStringExtra("data");
         getRightTextView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,9 +48,14 @@ public class PublicCommentActivity extends BaseActivity {
                         EventBus.getDefault().post(new EventBusUtil(EventWhatId.REFRSH));
                     }
                 });
-                Worker.dynamicFunction("4", et.getText().toString().trim(), item.getID(), "", "");
+                Worker.dynamicFunction("4", et.getText().toString().trim(), id, "", "");
             }
         });
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

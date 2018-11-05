@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.dmcbig.mediapicker.entity.Media;
 import com.project.my.studystarteacher.newteacher.common.ProjectConstant;
+import com.project.my.studystarteacher.newteacher.common.UserSingleton;
 import com.project.my.studystarteacher.newteacher.utils.LubanCallBack;
 import com.project.my.studystarteacher.newteacher.utils.NetUtils;
 import com.project.my.studystarteacher.newteacher.utils.lubanUtils;
@@ -114,6 +115,15 @@ public class MiceNetWorker extends SanmiNetWorker {
         executeTask(information, params);
     }
 
+    public void uploadHeadImg(String path) {
+        DemoHttpInformation information = DemoHttpInformation.UPLOADHEADIMG;
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
+        HashMap<String, String> stringStringHashMap = new HashMap<>();
+        stringStringHashMap.put("files", path);
+        executeTask(information, params,stringStringHashMap,true);
+    }
+
     public void count() {
         DemoHttpInformation information = DemoHttpInformation.COUNT;
         HashMap<String, String> params = new HashMap<String, String>();
@@ -122,9 +132,10 @@ public class MiceNetWorker extends SanmiNetWorker {
     }
 
     public void statistics() {
-        DemoHttpInformation information = DemoHttpInformation.STATISTICS;
+        DemoHttpInformation information = DemoHttpInformation.GETSCORELIST;
         HashMap<String, String> params = new HashMap<String, String>();
         params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
+        params.put("classId", UserSingleton.getInstance().getSysUser().getBji());
         executeTask(information, params);
     }
 
@@ -140,7 +151,8 @@ public class MiceNetWorker extends SanmiNetWorker {
         DemoHttpInformation information = DemoHttpInformation.GETBOOKDAMAGELIST;
         HashMap<String, String> params = new HashMap<String, String>();
         params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
-        params.put("searchValue", searchValue);
+        if (!isNull(searchValue))
+            params.put("searchValue", searchValue);
 
         executeTask(information, params);
     }
@@ -302,7 +314,8 @@ public class MiceNetWorker extends SanmiNetWorker {
         DemoHttpInformation information = DemoHttpInformation.GETBORROWBOOKRECORD;
         HashMap<String, String> params = new HashMap<String, String>();
         params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
-        params.put("searchValue", searchValue);
+        if (!isNull(searchValue))
+            params.put("searchValue", searchValue);
 
         executeTask(information, params);
     }
@@ -312,6 +325,14 @@ public class MiceNetWorker extends SanmiNetWorker {
         HashMap<String, String> params = new HashMap<String, String>();
         params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
         params.put("classId", classId);
+        executeTask(information, params);
+    }
+
+    public void boxList() {
+        DemoHttpInformation information = DemoHttpInformation.BOXLIST;
+        HashMap<String, String> params = new HashMap<String, String>();
+        params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
+        params.put("code", "9907");
         executeTask(information, params);
     }
 
@@ -408,7 +429,8 @@ public class MiceNetWorker extends SanmiNetWorker {
         DemoHttpInformation information = DemoHttpInformation.GETBACKRECORDS;
         HashMap<String, String> params = new HashMap<String, String>();
         params.put("token", SharedPreferencesUtil.get(mContext, ProjectConstant.TOKEN));
-        params.put("searchValue", searchValue);
+        if (!isNull(searchValue))
+            params.put("searchValue", searchValue);
         executeTask(information, params);
     }
 

@@ -59,7 +59,7 @@ public class YueDuBangActivity extends BaseActivity {
     protected void init() {
         //  list.setAdapter();
         getData();
-        imageUtility = new ImageUtility(R.mipmap.moren);
+        imageUtility = new ImageUtility(R.mipmap.img_headportrait);
     }
 
     public void getData() {

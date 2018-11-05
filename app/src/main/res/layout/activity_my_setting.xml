@@ -30,6 +30,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
+                    android:id="@+id/icon_ll"
                     android:layout_width="match_parent"
                     android:layout_height="45dp"
                     android:orientation="horizontal">
@@ -169,8 +170,8 @@
                         android:layout_gravity="center"
                         android:layout_marginRight="10dp"
                         android:gravity="center_vertical"
-                        android:text="1925-12-11"
                         android:minWidth="20dp"
+                        android:text="1925-12-11"
                         android:textColor="@color/blacktext" />
 
                     <TextView
@@ -246,10 +247,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="40dp"
                         android:layout_gravity="center"
-                        android:minWidth="20dp"
                         android:layout_marginRight="10dp"
                         android:gravity="center_vertical"
                         android:maxLength="1"
+                        android:minWidth="20dp"
                         android:text="男"
                         android:textColor="@color/blacktext" />
 

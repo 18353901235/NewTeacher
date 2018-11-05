@@ -43,8 +43,9 @@ public class AudioBookActivity extends BaseActivity {
     @Override
     protected void init() {
         getCommonTitle().setText("有声绘本");
-        getRight().setBackgroundResource(R.mipmap.musicbk_ic_search);
-        getRight2().setBackgroundResource(R.mipmap.musicbk_ic_screen);
+        getRight().setBackgroundResource(R.mipmap.musicbk_ic_screen);
+        //  getRight().setBackgroundResource(R.mipmap.musicbk_ic_search);
+        //   getRight2().setBackgroundResource(R.mipmap.musicbk_ic_screen);
         homeClassAdapter3 = new AudioBookAdapter(mContext, R.layout.item_audio_list, dataList);
         list.setAdapter(homeClassAdapter3);
         inflate = View.inflate(mContext, R.layout.pop_fifter_audio, null);
@@ -64,7 +65,7 @@ public class AudioBookActivity extends BaseActivity {
                 ToActivity(mContext, AudioPayerActivity.class, mp3Book, position);
             }
         });
-        getRight2().setOnClickListener(new View.OnClickListener() {
+        getRight().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 PopWindowUtils.show(mContext, v, inflate, -1, WindowSize.getWidth(mContext) / 4 * 3);
@@ -219,7 +220,7 @@ public class AudioBookActivity extends BaseActivity {
                 }
             }
         });
-        Worker.getVoicedBookList(agev, Categoryv, countryv,  "", "");
+        Worker.getVoicedBookList(agev, Categoryv, countryv, "", "");
     }
 
 }

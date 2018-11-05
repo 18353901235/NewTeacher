@@ -1,13 +1,18 @@
 package com.project.my.studystarteacher.newteacher.activity.my;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.project.my.studystarteacher.newteacher.R;
 import com.project.my.studystarteacher.newteacher.base.BaseActivity;
+import com.project.my.studystarteacher.newteacher.bean.ShareT;
 import com.project.my.studystarteacher.newteacher.common.UserSingleton;
 import com.project.my.studystarteacher.newteacher.net.DemoHttpInformation;
+import com.project.my.studystarteacher.newteacher.share.ShareActivity;
+import com.project.my.studystarteacher.newteacher.utils.ImageUtility;
+import com.zhouqiang.framework.util.JsonUtil;
 import com.zhouqiang.framework.util.Logger;
 
 import org.xutils.common.Callback;
@@ -40,11 +45,25 @@ public class LoveBossActivity extends BaseActivity {
 
     public void toAnswer() {
         RequestParams params = new RequestParams(DemoHttpInformation.SHARED.getUrlPath() + "?token=" + UserSingleton.getInstance().getToken());
+        params.addHeader("token", UserSingleton.getInstance().getToken());
         x.http().get(params, new Callback.CommonCallback<String>() {
             @Override
             public void onSuccess(String result) {
                 try {
                     Logger.d(":::::" + result);
+                    final ShareT shareT = JsonUtil.fromBean(result, ShareT.class);
+//                    new ImageUtility(R.mipmap.moren).showImage("http://app.xuezhixing.net:8080/image" + shareT.getData().getPic(), iv);
+                    go.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(mContext, ShareActivity.class);
+                            intent.putExtra("url", shareT.getData().getLink());
+                            intent.putExtra("title", shareT.getData().getTitle());
+                            intent.putExtra("image", "http://app.xuezhixing.net:8080/image" + shareT.getData().getPic());
+                            intent.putExtra("content", shareT.getData().getContent());
+                            mContext.startActivity(intent);
+                        }
+                    });
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

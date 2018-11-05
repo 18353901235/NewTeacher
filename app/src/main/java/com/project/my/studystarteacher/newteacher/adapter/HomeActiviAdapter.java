@@ -15,6 +15,8 @@ import com.project.my.studystarteacher.newteacher.bean.DyNamicBean;
 import com.project.my.studystarteacher.newteacher.net.DemoNetTaskExecuteListener;
 import com.project.my.studystarteacher.newteacher.net.MiceNetWorker;
 import com.project.my.studystarteacher.newteacher.share.ShareActivity;
+import com.project.my.studystarteacher.newteacher.utils.EventBusUtil;
+import com.project.my.studystarteacher.newteacher.utils.EventWhatId;
 import com.project.my.studystarteacher.newteacher.utils.FaceConversionUtil;
 import com.project.my.studystarteacher.newteacher.utils.ImageUtility;
 import com.zhouqiang.framework.bean.BaseBean;
@@ -24,6 +26,7 @@ import com.zhouqiang.framework.util.ToastUtil;
 import com.zhy.adapter.abslistview.CommonAdapter;
 import com.zhy.adapter.abslistview.ViewHolder;
 
+import org.greenrobot.eventbus.EventBus;
 import org.xutils.common.util.DensityUtil;
 
 import java.util.ArrayList;
@@ -67,8 +70,9 @@ public class HomeActiviAdapter extends CommonAdapter<DyNamicBean> {
         viewHolder.getView(R.id.pinglun).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                EventBus.getDefault().post(new EventBusUtil(EventWhatId.BEAN, item));
                 Intent intent = new Intent(mContext, PublicCommentActivity.class);
-                intent.putExtra("data", item);
+                intent.putExtra("data", item.getID());
                 mContext.startActivity(intent);
             }
         });
@@ -168,8 +172,6 @@ public class HomeActiviAdapter extends CommonAdapter<DyNamicBean> {
                 std.setVisibility(View.VISIBLE);
                 std.setUp(item.getPics()
                         , "", Jzvd.SCREEN_WINDOW_NORMAL);
-
-
                 //  std.startVideo();
 
             }

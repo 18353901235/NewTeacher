@@ -80,7 +80,7 @@ public class WornDetailActivity extends BaseActivity {
         gv.setAdapter(ivAdapter);
 
         getCommonTitle().setText("破损管理");
-        getRight().setBackgroundResource(R.mipmap.musicbk_ic_search);
+        //getRight().setBackgroundResource(R.mipmap.musicbk_ic_search);
     }
 
 

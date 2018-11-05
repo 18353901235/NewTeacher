@@ -46,7 +46,7 @@ public class SpalshActivity extends BaseActivity {
                     getPackageName(), 0);
             String version = packInfo.versionName;
             clientVersionCode = packInfo.versionCode;
-            tv_v.setText("学之星  v" + version);
+            tv_v.setText("中育悦读  v" + version);
 //        clientVersionCode =2;
         } catch (PackageManager.NameNotFoundException e1) {
             // TODO Auto-generated catch block
